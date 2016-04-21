@@ -1,0 +1,82 @@
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.exe.config
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.exe
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.pdb
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.xml
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.vbprojResolveAssemblyReference.cache
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.vbproj.ResolveComReference.cache
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawingPlan.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawElevation.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmLockCurves.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.DiaFrm_LockDelete.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawing_Mnt_Others.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawing_Mnt_Incline.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmRolling.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.DiaFrm_PointsTreeView.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Diafrm_Output_Word.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.GlobalApp_Form.APPLICATION_MAINFORM.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.DataBase.frmProjectFile.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Resources.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Test_FindMax.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Test_Excel.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Test_FixWndSize.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.AddFileOrDirectoryFiles.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.myDataGridView.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.PictureBox_AutoRoll.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.UsrCtrl_NumberChanging.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.UI_SplashScreen.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.UI.UI_BackGround.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Visio_DataRecordsetLinkToShape.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveDataFromExcel.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveDataFromWord.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.vbproj.GenerateResource.Cache
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.exe
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.xml
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.pdb
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmRegexDate.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.exe.config
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.exe
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.pdb
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.xml
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\API_Collection.dll
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\API_Collection.pdb
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\API_Collection.xml
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.vbprojResolveAssemblyReference.cache
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.vbproj.ResolveComReference.cache
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveData_Word.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveData_Excel.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveData.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmRegexDate.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawingPlan.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawElevation.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmLockCurves.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.DiaFrm_LockDelete.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawing_Mnt_Others.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDrawing_Mnt_Incline.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmRolling.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.DiaFrm_PointsTreeView.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Diafrm_Output_Word.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.GlobalApp_Form.APPLICATION_MAINFORM.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.DataBase.frmProjectFile.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Resources.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Test_FindMax.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Test_Excel.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Test_FixWndSize.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.AddFileOrDirectoryFiles.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.myDataGridView.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.PictureBox_AutoRoll.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.AME_UserControl.UsrCtrl_NumberChanging.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.UI_SplashScreen.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.UI.UI_BackGround.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.Visio_DataRecordsetLinkToShape.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.vbproj.GenerateResource.Cache
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.exe
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.xml
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.pdb
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveDataFromExcel.resources
+F:\基坑数据\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveDataFromWord.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveData_Word.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveData_Excel.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.frmDeriveData.resources
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\eZAPI.dll
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\eZAPI.pdb
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\eZAPI.xml

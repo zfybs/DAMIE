@@ -1,0 +1,185 @@
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbproj.ResolveComReference.cache
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawingPlan.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawing_Mnt_Others.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmRolling.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.DiaFrm_PointsTreeView.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.Diafrm_Output_Word.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.GlobalApp_Form.APPLICATION_MAINFORM.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.Resources.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawElevation.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.AddFileOrDirectoryFiles.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.myDataGridView.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.PictureBox_AutoRoll.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.UsrCtrl_NumberChanging.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.UI_SplashScreen.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.UI.UI_BackGround.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.Visio_DataRecordsetLinkToShape.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmDeriveDataFromExcel.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmDeriveDataFromWord.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbproj.GenerateResource.Cache
+F:\基坑数据\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.exe.config
+F:\基坑数据\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.exe
+F:\基坑数据\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.pdb
+F:\基坑数据\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.xml
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.exe
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.xml
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.pdb
+E:\后世博项目\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.exe.config
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbproj.ResolveComReference.cache
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.exe
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.xml
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.pdb
+E:\后世博项目\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.exe
+E:\后世博项目\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.pdb
+E:\后世博项目\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.xml
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawingPlan.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawing_Mnt_Others.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawing_Mnt_Incline.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.frmRolling.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.DiaFrm_PointsTreeView.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.Diafrm_Output_Word.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.GlobalApp_Form.APPLICATION_MAINFORM.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.Resources.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawElevation.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.AddFileOrDirectoryFiles.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.myDataGridView.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.PictureBox_AutoRoll.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.UsrCtrl_NumberChanging.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.UI_SplashScreen.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.UI.UI_BackGround.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.Visio_DataRecordsetLinkToShape.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.frmDeriveDataFromExcel.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.frmDeriveDataFromWord.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbproj.GenerateResource.Cache
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbprojResolveAssemblyReference.cache
+F:\基坑数据\程序编写\群坑分析\AME\bin\Debug\API_Collection.dll
+F:\基坑数据\程序编写\群坑分析\AME\bin\Debug\API_Collection.pdb
+F:\基坑数据\程序编写\群坑分析\AME\bin\Debug\API_Collection.xml
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.DiaFrm_LockDelete.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.Test_FixWndSize.resources
+E:\后世博项目\程序编写\群坑分析\AME\bin\Debug\API_Collection.dll
+E:\后世博项目\程序编写\群坑分析\AME\bin\Debug\API_Collection.pdb
+E:\后世博项目\程序编写\群坑分析\AME\bin\Debug\API_Collection.xml
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbprojResolveAssemblyReference.cache
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.DiaFrm_LockDelete.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.Test_FixWndSize.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\bin\Debug\Analysis_ME.exe.config
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\Anss_ME.vbproj.ResolveComReference.cache
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\Analysis_ME.exe
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\Analysis_ME.xml
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\Analysis_ME.pdb
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\bin\Debug\Analysis_ME.exe
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\bin\Debug\Analysis_ME.pdb
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\bin\Debug\Analysis_ME.xml
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\bin\Debug\API_Collection.dll
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\bin\Debug\API_Collection.pdb
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\bin\Debug\API_Collection.xml
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\Anss_ME.vbprojResolveAssemblyReference.cache
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.frmDrawingPlan.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.DiaFrm_LockDelete.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.frmDrawing_Mnt_Others.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.frmDrawing_Mnt_Incline.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.frmRolling.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.DiaFrm_PointsTreeView.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.Diafrm_Output_Word.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.GlobalApp_Form.APPLICATION_MAINFORM.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.AMEProject.frmProjectFile.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.Resources.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.frmDrawElevation.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.Test_FixWndSize.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.AME_UserControl.AddFileOrDirectoryFiles.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.AME_UserControl.myDataGridView.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.AME_UserControl.PictureBox_AutoRoll.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.AME_UserControl.UsrCtrl_NumberChanging.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.UI_SplashScreen.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.UI.UI_BackGround.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.Visio_DataRecordsetLinkToShape.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.frmDeriveDataFromExcel.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\AME.frmDeriveDataFromWord.resources
+F:\基坑数据\程序编写\新建文件夹\群坑分析——待完善 - 副本\AME\obj\Debug\Anss_ME.vbproj.GenerateResource.Cache
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.DataBase.frmProjectFile.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.DataBase.frmProjectFile.resources
+E:\后世博项目\程序编写\群坑分析\AME\obj\Debug\AME.FindMax.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.Test_Excel.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.Test_FindMax.resources
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawing_Mnt_Incline.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.exe.config
+E:\Expo-B03 Project\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.exe
+E:\Expo-B03 Project\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.pdb
+E:\Expo-B03 Project\程序编写\群坑分析\AME\bin\Debug\Analysis_ME.xml
+E:\Expo-B03 Project\程序编写\群坑分析\AME\bin\Debug\API_Collection.dll
+E:\Expo-B03 Project\程序编写\群坑分析\AME\bin\Debug\API_Collection.pdb
+E:\Expo-B03 Project\程序编写\群坑分析\AME\bin\Debug\API_Collection.xml
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbprojResolveAssemblyReference.cache
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbproj.ResolveComReference.cache
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawingPlan.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawElevation.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmLockCurves.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.DiaFrm_LockDelete.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawing_Mnt_Others.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmDrawing_Mnt_Incline.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmRolling.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.DiaFrm_PointsTreeView.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.Diafrm_Output_Word.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.GlobalApp_Form.APPLICATION_MAINFORM.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.DataBase.frmProjectFile.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.Resources.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.Test_FindMax.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.Test_Excel.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.Test_FixWndSize.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.AddFileOrDirectoryFiles.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.myDataGridView.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.PictureBox_AutoRoll.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.AME_UserControl.UsrCtrl_NumberChanging.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.UI_SplashScreen.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.UI.UI_BackGround.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.Visio_DataRecordsetLinkToShape.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmDeriveDataFromExcel.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\AME.frmDeriveDataFromWord.resources
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\Anss_ME.vbproj.GenerateResource.Cache
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.exe
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.xml
+E:\Expo-B03 Project\程序编写\群坑分析\AME\obj\Debug\Analysis_ME.pdb
+F:\基坑数据\程序编写\群坑分析\AME\obj\Debug\AME.frmLockCurves.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\Anss_ME.vbproj.ResolveComReference.cache
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\bin\Debug\DAMIE.exe.config
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\bin\Debug\DAMIE.exe
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\bin\Debug\DAMIE.pdb
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\bin\Debug\DAMIE.xml
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\bin\Debug\API_Collection.dll
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\bin\Debug\API_Collection.pdb
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\bin\Debug\API_Collection.xml
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\Anss_ME.vbprojResolveAssemblyReference.cache
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmDrawingPlan.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmDrawElevation.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmLockCurves.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.DiaFrm_LockDelete.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmDrawing_Mnt_Others.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmDrawing_Mnt_Incline.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmRolling.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.DiaFrm_PointsTreeView.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.Diafrm_Output_Word.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.GlobalApp_Form.APPLICATION_MAINFORM.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.DataBase.frmProjectFile.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.Resources.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.Test_FindMax.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.Test_Excel.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.Test_FixWndSize.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.AME_UserControl.AddFileOrDirectoryFiles.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.AME_UserControl.myDataGridView.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.AME_UserControl.PictureBox_AutoRoll.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.AME_UserControl.UsrCtrl_NumberChanging.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.UI_SplashScreen.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.UI.UI_BackGround.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.Visio_DataRecordsetLinkToShape.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmDeriveDataFromExcel.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.frmDeriveDataFromWord.resources
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\Anss_ME.vbproj.GenerateResource.Cache
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.exe
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.xml
+E:\Expo-B03 Project\程序编写Analysis_ME\群坑分析\AME\obj\Debug\DAMIE.pdb
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\bin\Debug\DAMIE.exe.config
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\Anss_ME.vbproj.ResolveComReference.cache
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.exe
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.xml
+E:\Expo-B03 Project\程序编写-DAMIE\基坑群实测数据动态分析\DAMIE\obj\Debug\DAMIE.pdb
