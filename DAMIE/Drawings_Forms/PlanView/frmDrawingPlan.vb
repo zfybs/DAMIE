@@ -99,21 +99,27 @@ Public Class frmDrawingPlan
                 End If
             End If
             If blnFilePathValidated Then
-                Me.Hide()
-                Dim PointsInfo As ClsDrawing_PlanView.MonitorPointsInformation = Nothing
+                Try
+                    Me.Hide()
+                    Dim PointsInfo As ClsDrawing_PlanView.MonitorPointsInformation = Nothing
 
-                '提取监测点位的信息
-                If F_HasMonitorPointinfos Then
-                    PointsInfo = UIToPointsInfo()
-                End If
-                '提取开挖平面图的信息
-                Dim visioWindow As New ClsDrawing_PlanView( _
-                                        strFilePath:=VsoFilepath, type:=DrawingType.Vso_PlanView, _
-                                        PageName_PlanView:=Me.TextBoxPageName.Text, _
-                                        ShapeID_AllRegions:=Me.TextBoxAllRegions.Text, _
-                                        InfoBoxID:=Me.TextBoxInfoBoxID.Text, _
-                                        HasMonitorPointsInfo:=Me.F_HasMonitorPointinfos, MonitorPointsInfo:=PointsInfo)
-                Me.Close()
+                    '提取监测点位的信息
+                    If F_HasMonitorPointinfos Then
+                        PointsInfo = UIToPointsInfo()
+                    End If
+                    '提取开挖平面图的信息
+                    Dim visioWindow As New ClsDrawing_PlanView(
+                                            strFilePath:=VsoFilepath, type:=DrawingType.Vso_PlanView,
+                                            PageName_PlanView:=Me.TextBoxPageName.Text,
+                                            ShapeID_AllRegions:=Me.TextBoxAllRegions.Text,
+                                            InfoBoxID:=Me.TextBoxInfoBoxID.Text,
+                                            HasMonitorPointsInfo:=Me.F_HasMonitorPointinfos, MonitorPointsInfo:=PointsInfo)
+                    Me.Close()
+                Catch ex As Exception
+                    MessageBox.Show("Visio平面图打开出错，请重新打开。", "Tip", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+                    Me.Visible = True
+                    GlobalApplication.Application.PlanView_VisioWindow = Nothing
+                End Try
             Else
                 MessageBox.Show("Visio文档不符合规范，请重新选择。", "Tip", MessageBoxButtons.OK, MessageBoxIcon.Hand)
             End If
@@ -143,7 +149,7 @@ Public Class frmDrawingPlan
 #Region "  ---  一般界面操作"
     '文本框的字符格式验证
     Private Sub ValidateForSingle(sender As Object, e As EventArgs) _
-        Handles txtbx_Pt_BL_CAD_X.Validating, txtbx_Pt_BL_CAD_Y.Validating, _
+        Handles txtbx_Pt_BL_CAD_X.Validating, txtbx_Pt_BL_CAD_Y.Validating,
         txtbx_Pt_UR_CAD_X.Validating, txtbx_Pt_UR_CAD_Y.Validating
         Dim ctrl As TextBox = DirectCast(sender, TextBox)
         Dim T As String = ctrl.Text
@@ -270,14 +276,14 @@ Public Class frmDrawingPlan
                 .ShapeName_MonitorPointTag = EleParent.SelectSingleNode(Nd2_ShapeName_MonitorPointTag).InnerText
                 .pt_Visio_BottomLeft_ShapeID = EleParent.SelectSingleNode(Nd2_pt_Visio_BottomLeft_ShapeID).InnerText
                 .pt_Visio_UpRight_ShapeID = EleParent.SelectSingleNode(Nd2_pt_Visio_UpRight_ShapeID).InnerText
-                .pt_CAD_BottomLeft = New PointF(EleParent.SelectSingleNode(Nd2_pt_CAD_BottomLeft_X).InnerText, _
+                .pt_CAD_BottomLeft = New PointF(EleParent.SelectSingleNode(Nd2_pt_CAD_BottomLeft_X).InnerText,
                                                EleParent.SelectSingleNode(Nd2_pt_CAD_BottomLeft_Y).InnerText)
-                .pt_CAD_UpRight = New PointF(EleParent.SelectSingleNode(Nd2_pt_CAD_UpRight_X).InnerText, _
+                .pt_CAD_UpRight = New PointF(EleParent.SelectSingleNode(Nd2_pt_CAD_UpRight_X).InnerText,
                                                EleParent.SelectSingleNode(Nd2_pt_CAD_UpRight_Y).InnerText)
             End With
         Catch ex As Exception
             MessageBox.Show("从文件导入出错" & vbCrLf & ex.Message & vbCrLf & "报错位置：" &
-                            ex.TargetSite.Name, "Error", _
+                            ex.TargetSite.Name, "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         Return PointsInfo
@@ -336,7 +342,7 @@ Public Class frmDrawingPlan
             End With
         Catch ex As Exception
             MessageBox.Show("导出到文件出错。" & vbCrLf & ex.Message & vbCrLf & "报错位置：" &
-                            ex.TargetSite.Name, "Error", _
+                            ex.TargetSite.Name, "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub

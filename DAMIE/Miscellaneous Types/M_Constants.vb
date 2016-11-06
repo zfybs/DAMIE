@@ -47,7 +47,7 @@
     Public Class Project_Expo
 
         ''' <summary>
-        ''' 工程项目的自然地面的标高值
+        ''' 工程项目的自然地面的标高值，单位为m
         ''' </summary>
         ''' <remarks></remarks>
         Public Const Elevation_GroundSurface As Single = 4.2
@@ -57,6 +57,14 @@
         ''' </summary>
         ''' <remarks></remarks>
         Public Const eleTop As Single = 5
+
+        ''' <summary>
+        ''' 测斜管的顶部的绝对标高（只是一般情况下的标高值，每根测斜管的顶部标高值可以不同）
+        ''' </summary>
+        ''' <remarks>在水平测斜的监测数据中，深度值是相对于测斜管顶部的深度；
+        ''' 而项目中的其他构件或者开挖的位置，是按绝对标高给出来的，所以需要此属性的值来进行二者之间的转换。
+        ''' </remarks>
+        Public Const InclineTopElevaion As Single = 1.3
 
     End Class                   'Project
 
@@ -337,7 +345,7 @@
             ''' 定义监测数据中的数据区域（包含x轴的深度数据）的起始单元格的位置：一般为“A3”
             ''' </summary>
             ''' <remarks></remarks>
-            Public Const RowNum_FirstData_WithoutDate As Byte = 3
+            Public Const RowNum_FirstData_WithoutDate As Byte = 2
             ''' <summary>
             ''' 第一列数据即是数据标签，比如测斜数据工作表中的深度列
             ''' </summary>
@@ -373,7 +381,7 @@
             ''' 定义监测数据中的数据区域（包含x轴的深度数据）的起始单元格的位置：一般为“A3”
             ''' </summary>
             ''' <remarks></remarks>
-            Public Const RowNum_FirstData_WithoutDate As Byte = 3
+            Public Const RowNum_FirstData_WithoutDate As Byte = 2
             ''' <summary>
             ''' 第一列数据即是数据标签，比如测斜数据工作表中的深度列，或者是其他数据类型的测点编号所在列
             ''' </summary>

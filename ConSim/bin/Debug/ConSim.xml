@@ -1,0 +1,317 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ConSim
+</name>
+</assembly>
+<members>
+<member name="T:ConSim.LstbxDisplayAndItem">
+ <summary>
+ 用来作为ListControl类的.Add方法中的Item参数的类。通过指定ListControl类的DisplayMember属性，来设置列表框中显示的文本。 
+ </summary>
+ <remarks>
+ 保存数据时：
+  With ListBoxWorksheetsName
+       .DisplayMember = LstbxDisplayAndItem.DisplayMember
+       .ValueMember = LstbxDisplayAndItem.ValueMember
+       .DataSource = arrSheetsName   '  Dim arrSheetsName(0 To sheetsCount - 1) As LstbxDisplayAndItem
+  End With
+ 提取数据时：
+  Try
+      Me.F_shtMonitorData = DirectCast(Me.ListBoxWorksheetsName.SelectedValue, Worksheet)
+  Catch ex As Exception
+      Me.F_shtMonitorData = Nothing
+  End Try
+ 或者是：
+  Dim lst As LstbxDisplayAndItem = Me.ComboBoxOpenedWorkbook.SelectedItem
+  Try
+     Dim Wkbk As Workbook = DirectCast(lst.Value, Workbook)
+  Catch ex ...
+ </remarks>
+</member>
+<member name="F:ConSim.LstbxDisplayAndItem.DisplayMember">
+ <summary>
+ 在列表框中进行显示的文本
+ </summary>
+ <remarks>此常数的值代表此类中代表要在列表框中显示的文本的属性名，即"DisplayedText"</remarks>
+</member>
+<member name="F:ConSim.LstbxDisplayAndItem.ValueMember">
+ <summary>
+ 列表框中每一项对应的值（任何类型的值）
+ </summary>
+ <remarks>此常数的值代表此类中代表列表框中的每一项绑定的数据的属性名，即"Value"</remarks>
+</member>
+<member name="M:ConSim.LstbxDisplayAndItem.#ctor(System.String,System.Object)">
+ <summary>
+ 构造函数
+ </summary>
+ <param name="DisplayedText">用来显示在列表的UI界面中的文本</param>
+ <param name="Value">列表项对应的值</param>
+ <remarks></remarks>
+</member>
+<member name="T:ConSim.LstbxDisplayAndItem.NothingInListBox">
+ <summary>
+ 列表框中用来表示“什么也没有”。
+ 1、在声明时：listControl控件.Items.Add(New LstbxDisplayAndItem(" 无", NothingInListBox.None))
+ 2、在选择列表项时：listControl控件.SelectedValue = NothingInListBox.None
+ 3、在读取列表中的数据时，作出判断：If Not LstbxItem.Value.Equals(NothingInListBox.None) Then ...
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:ConSim.LstbxDisplayAndItem.NothingInListBox.None">
+ <summary>
+ 什么也没有选择
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:ConSim.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ConSim.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ConSim.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:ConSim.My.Resources.Resources.DataConnection_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ConSim.My.Resources.Resources.ImportCAD_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ConSim.My.Resources.Resources.Layers_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ConSim.My.Resources.Resources.Link_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ConSim.My.Resources.Resources.Monitor_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:ConSim.ThisRibbonCollection">
+
+</member>
+<member name="M:ConSim.ThisRibbonCollection.#ctor(Microsoft.Office.Tools.Ribbon.RibbonFactory)">
+
+</member>
+<member name="T:ConSim.ThisAddIn">
+
+</member>
+<member name="M:ConSim.ThisAddIn.#ctor(Microsoft.Office.Tools.Factory,System.IServiceProvider)">
+
+</member>
+<member name="M:ConSim.ThisAddIn.Initialize">
+
+</member>
+<member name="M:ConSim.ThisAddIn.FinishInitialization">
+
+</member>
+<member name="M:ConSim.ThisAddIn.InitializeDataBindings">
+
+</member>
+<member name="M:ConSim.ThisAddIn.InitializeCachedData">
+
+</member>
+<member name="M:ConSim.ThisAddIn.InitializeData">
+
+</member>
+<member name="M:ConSim.ThisAddIn.BindToData">
+
+</member>
+<member name="M:ConSim.ThisAddIn.StartCaching(System.String)">
+
+</member>
+<member name="M:ConSim.ThisAddIn.StopCaching(System.String)">
+
+</member>
+<member name="M:ConSim.ThisAddIn.IsCached(System.String)">
+
+</member>
+<member name="M:ConSim.ThisAddIn.BeginInitialization">
+
+</member>
+<member name="M:ConSim.ThisAddIn.EndInitialization">
+
+</member>
+<member name="M:ConSim.ThisAddIn.InitializeControls">
+
+</member>
+<member name="M:ConSim.ThisAddIn.InitializeComponents">
+
+</member>
+<member name="M:ConSim.ThisAddIn.NeedsFill(System.String)">
+
+</member>
+<member name="T:ConSim.DataRecordsetLinkToShape">
+ <summary>
+ Excel数据到Visio形状
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:ConSim.DataRecordsetLinkToShape._F_vsoDoc">
+ <summary>
+ 进行形状链接的文档
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:ConSim.DataRecordsetLinkToShape.vsoDoc">
+ <summary>
+ 进行形状链接的文档，设置此属性时会触发vsoDocumentChanged事件
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="E:ConSim.DataRecordsetLinkToShape.vsoDocumentChanged">
+ <summary>
+ 当进行数据链接的Visio文档发生改变时触发
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:ConSim.DataRecordsetLinkToShape.ShapeIDValidated">
+ <summary>
+ 在Visio文档通过验证，表示可以进行数据链接之时触发
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:ConSim.DataRecordsetLinkToShape._F_vsoApplication">
+ <summary>
+ Visio的Application对象，此对象不包含在“群坑分析”的主程序中的那个Visio的Application对象
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:ConSim.DataRecordsetLinkToShape.F_vsoPage">
+ <summary>
+ 进行形状链接的绘图页面
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:ConSim.DataRecordsetLinkToShape.F_vsoDataRs">
+ <summary>
+ 进行链接的数据记录集
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:ConSim.DataRecordsetLinkToShape.F_IndexOfShapeID">
+ <summary>
+ 在数据记录集中标识“形状ID”的字段列的下标值。在数据记录集中，每一行中的第一列（个）数据的下标值为0。
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.GetPagesFromDoc(Microsoft.Office.Interop.Visio.Document)">
+ <summary>
+ 从Visio文档中返回其中的所有Page对象的数组
+ </summary>
+ <param name="Doc"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.GetDataRsFromDoc(Microsoft.Office.Interop.Visio.Document)">
+ <summary>
+ 从Visio文档中返回其中的所有DataRecordset对象的数组
+ </summary>
+ <param name="Doc"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.GetColumnsFromDataRS(Microsoft.Office.Interop.Visio.DataRecordset)">
+ <summary>
+ 从Visio文档的数据记录集中返回其中的字段列对象的数组
+ </summary>
+ <param name="DRS"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.BtnChooseVsoDoc_Click(System.Object,System.EventArgs)">
+ <summary>
+ 选择新的Visio文档
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.ValidateShapes(Microsoft.Office.Interop.Visio.Page,Microsoft.Office.Interop.Visio.DataRecordset,System.Int32)">
+ <summary>
+ 验证页面中是否包含所有位于数据记录集中所记录的形状ID。
+ </summary>
+ <param name="page"></param>
+ <param name="DRS"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.PassDataRecordsetToShape(Microsoft.Office.Interop.Visio.DataRecordset,Microsoft.Office.Interop.Visio.Page,System.Int16,System.Boolean)">
+ <summary>
+ 将Visio中的外部数据链接到Page中的指定形状。
+ 此操作的作用：通过Visio的数据图形功能，在对应的形状上显示出它所链接的数据，比如此图形对应的开挖深度。
+ </summary>
+ <param name="DataRS">数据链接的源数据记录集</param>
+ <param name="Page">要进行数据链接的形状所在的Page</param>
+ <param name="ColumnIndex_PrimaryKey">在数据记录集中，用来记录形状的名称的数据所在的列号。如果是第一列，则为0.</param>
+ <param name="DeleteDataRecordset">是否要在数据记录集的数据链接到形状后，将此数据记录集删除。</param>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.DocumentChanged(Microsoft.Office.Interop.Visio.Document)">
+ <summary>
+ Visio文档改变
+ </summary>
+ <param name="vsoDoc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.Visio_DataRecordsetLinkToShape_ShapeIDValidated">
+ <summary>
+ 形状ID验证成功
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.F_vsoApplication_BeforeQuit(Microsoft.Office.Interop.Visio.Application)">
+ <summary>
+ Visio程序关闭
+ </summary>
+ <param name="app"></param>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.F_vsoDoc_BeforeDocumentClose(Microsoft.Office.Interop.Visio.Document)">
+ <summary>
+ Visio文档关闭
+ </summary>
+ <param name="Doc"></param>
+ <remarks></remarks>
+</member>
+<member name="T:ConSim.DataRecordsetLinkToShape.BeforeDocumentCloseHander">
+ <summary>
+ 委托：在主程序界面上清空列表框的显示
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:ConSim.DataRecordsetLinkToShape.ClearUI">
+ <summary>
+ 在主程序界面上清空列表框的显示
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:ConSim.Globals">
+
+</member>
+<member name="M:ConSim.Globals.#ctor">
+
+</member>
+</members>
+</doc>

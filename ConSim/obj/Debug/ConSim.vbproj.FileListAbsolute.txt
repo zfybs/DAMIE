@@ -1,0 +1,15 @@
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\bin\Debug\ConSim.dll
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\bin\Debug\ConSim.pdb
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\bin\Debug\ConSim.xml
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\bin\Debug\ConSim.dll.manifest
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\bin\Debug\ConSim.vsto
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.vbprojResolveAssemblyReference.cache
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.Ribbon1.resources
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.Resources.resources
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.vbproj.GenerateResource.Cache
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.dll
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.xml
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.pdb
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+E:\Expo-B03 Project\程序编写-DAMIE\DAMIE\ConSim\obj\Debug\ConSim.DataRecordsetLinkToShape.resources

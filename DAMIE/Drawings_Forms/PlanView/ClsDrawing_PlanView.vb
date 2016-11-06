@@ -1,10 +1,8 @@
-﻿Imports Microsoft.Office.Interop.Visio
-Imports DAMIE.Constants
-Imports DAMIE.Miscellaneous
-Imports DAMIE.Miscellaneous.GeneralMethods
-Imports DAMIE.All_Drawings_In_Application
+﻿Imports System.ComponentModel
 Imports DAMIE.DataBase
 Imports DAMIE.GlobalApp_Form
+Imports DAMIE.Miscellaneous
+Imports Microsoft.Office.Interop.Visio
 
 Namespace All_Drawings_In_Application
 
@@ -300,7 +298,7 @@ Namespace All_Drawings_In_Application
         ''' 后台工作线程
         ''' </summary>
         ''' <remarks></remarks>
-        Private WithEvents F_BackgroundWorker As New System.ComponentModel.BackgroundWorker
+        Private WithEvents F_BackgroundWorker As New BackgroundWorker
 
         ''' <summary>
         ''' 开挖平面图在Visio中的页面名称
@@ -346,11 +344,11 @@ Namespace All_Drawings_In_Application
         ''' <param name="ShapeID_AllRegions">所有分区的组合形状的ID值</param>
         ''' <param name="InfoBoxID">记录开挖信息的文本框</param>
         ''' <remarks></remarks>
-        Public Sub New(ByVal strFilePath As String, ByVal type As DrawingType, _
-                        ByVal PageName_PlanView As String, _
-                        ByVal ShapeID_AllRegions As Integer, ByVal InfoBoxID As Integer, _
-                        ByVal HasMonitorPointsInfo As Boolean, _
-                        ByVal MonitorPointsInfo As ClsDrawing_PlanView.MonitorPointsInformation)
+        Public Sub New(ByVal strFilePath As String, ByVal type As DrawingType,
+                        ByVal PageName_PlanView As String,
+                        ByVal ShapeID_AllRegions As Integer, ByVal InfoBoxID As Integer,
+                        ByVal HasMonitorPointsInfo As Boolean,
+                        ByVal MonitorPointsInfo As MonitorPointsInformation)
             '开挖平面图信息
             Me.F_PageName_PlanView = PageName_PlanView
             Me.F_ShapeID_AllRegions = ShapeID_AllRegions
@@ -375,14 +373,22 @@ Namespace All_Drawings_In_Application
 
 #Region "  ---  打开Visio平面图"
 
-        Private Sub F_BackgroundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles F_BackgroundWorker.DoWork
+        Private Sub F_BackgroundWorker_DoWork(sender As Object, e As DoWorkEventArgs) Handles F_BackgroundWorker.DoWork
             '主程序界面的进度条的UI显示     
             APPLICATION_MAINFORM.MainForm.ShowProgressBar_Marquee()
             '
             Dim strFilePath As String = e.Argument(0)
             Dim type As DrawingType = e.Argument(1)
             '执行具体的绘图操作
-            Me.Application = Me.NewVsoApp()
+            Try
+                Me.Application = NewVsoApp()
+            Catch ex As Exception
+                Debug.Print(ex.Message)
+                e.Cancel = True
+                Exit Sub
+            End Try
+
+
             '
             Try
                 Dim vsoDoc As Document = OpenDocument(Me.P_Application, strFilePath)
@@ -432,9 +438,11 @@ Namespace All_Drawings_In_Application
             If Me.Application IsNot Nothing Then
                 Return Me.P_Application
             Else
+
                 '创建新Visio窗口并为其命名
-                Dim vsoApp As Application = New Application
-                'Me.P_VsoApp = CreateObject("visio.application")
+                Dim vsoApp = New Application()
+
+                ' Dim vsoApp  = CreateObject("visio.application")
                 '但是，这两种方法都有一个问题，就是在刚执行完这一句后，Visio程序的界面就出现了，
                 '即使后面紧跟着vsoApp.Visible = False，在UI显示上还是会出现一个界面由出现到隐藏的闪动。
                 vsoApp.Visible = False
@@ -460,7 +468,7 @@ Namespace All_Drawings_In_Application
             Catch ex As Exception
                 vsoApp.Quit()
                 Me.P_Application = Nothing
-                MessageBox.Show("选择的文件已经打开，请将其手动关闭并重新打开。", "Warning", MessageBoxButtons.OK, _
+                MessageBox.Show("选择的文件已经打开，请将其手动关闭并重新打开。", "Warning", MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning)
                 Return Nothing
             End Try
@@ -583,16 +591,9 @@ Namespace All_Drawings_In_Application
             End With
         End Sub
 
-        Private Sub F_BackgroundWorker_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles F_BackgroundWorker.RunWorkerCompleted
+        Private Sub F_BackgroundWorker_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles F_BackgroundWorker.RunWorkerCompleted
 
-            If Not e.Cancelled Then     '正常地打开了Visio平面图
-                '在绘图完成后，隐藏进度条
-                APPLICATION_MAINFORM.MainForm.HideProgress("Done")
-
-                '---将对象传递给mainform的属性中
-                GlobalApplication.Application.PlanView_VisioWindow = Me
-
-            Else                        '说明Visio文档打开异常
+            If e.Cancelled OrElse Me.Application Is Nothing Then   '说明Visio文档打开异常
                 '在绘图完成后，隐藏进度
                 With APPLICATION_MAINFORM.MainForm
                     .HideProgress("Visio文档打开异常。")
@@ -606,6 +607,13 @@ Namespace All_Drawings_In_Application
                     '标记：程序中已经打开的Visio平面图
                     ' .HasVisioPlanView = False
                 End With
+            Else                  '正常地打开了Visio平面图        
+                '在绘图完成后，隐藏进度条
+                APPLICATION_MAINFORM.MainForm.HideProgress("Done")
+
+                '---将对象传递给mainform的属性中
+                GlobalApplication.Application.PlanView_VisioWindow = Me
+
             End If
         End Sub
 #End Region
@@ -632,7 +640,7 @@ Namespace All_Drawings_In_Application
             Dim FinishedDate As Date
             Dim CompareDate As Integer
             SyncLock Me
-               P_Application.ShowChanges = False
+                P_Application.ShowChanges = False
                 P_Application.ScreenUpdating = False
                 For IRow As Integer = LBound(arrShapeID) To UBound(arrShapeID)
                     '形状的索引是从
@@ -680,7 +688,7 @@ Namespace All_Drawings_In_Application
         Private DoubleClick_StartTime As DateTime
         Private DoubleClick_FirstClickInitialized As Boolean
 
-        Private Sub DoubleClick_Up(Button As Integer, KeyButtonState As Integer, _
+        Private Sub DoubleClick_Up(Button As Integer, KeyButtonState As Integer,
                                    x As Double, y As Double, ByRef CancelDefault As Boolean) Handles P_Window.MouseUp
             If Button = 1 Then      'Left mouse button released
                 If DoubleClick_FirstClickInitialized Then
@@ -716,7 +724,7 @@ Namespace All_Drawings_In_Application
         ''' </summary>
         ''' <param name="SaveChanges">在关闭文档时是否保存修改的内容</param>
         ''' <remarks></remarks>
-        Public Sub Close(Optional ByVal SaveChanges As Boolean = False) Implements All_Drawings_In_Application.IAllDrawings.Close
+        Public Sub Close(Optional ByVal SaveChanges As Boolean = False) Implements IAllDrawings.Close
             Try
                 With Me
                     Dim vsoDoc As Document = .Page.Document
@@ -725,7 +733,7 @@ Namespace All_Drawings_In_Application
                     .Application.Quit()
                 End With
             Catch ex As Exception
-                MessageBox.Show("关闭Visio开挖平面图出错！" & vbCrLf & ex.Message, _
+                MessageBox.Show("关闭Visio开挖平面图出错！" & vbCrLf & ex.Message,
                           "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End Try
         End Sub
