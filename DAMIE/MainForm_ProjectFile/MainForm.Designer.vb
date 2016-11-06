@@ -34,8 +34,8 @@ Namespace GlobalApp_Form
             Me.StatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
             Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
             Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-            Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
             Me.TlStrpBtn_Roll = New System.Windows.Forms.ToolStripButton()
+            Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
             Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
             Me.MenuItemFile = New System.Windows.Forms.ToolStripMenuItem()
             Me.MenuItem_NewProject = New System.Windows.Forms.ToolStripMenuItem()
@@ -124,11 +124,6 @@ Namespace GlobalApp_Form
             Me.ToolStrip1.TabIndex = 5
             Me.ToolStrip1.Text = "ToolStrip1"
             '
-            'ToolStripSeparator3
-            '
-            Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-            Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
-            '
             'TlStrpBtn_Roll
             '
             Me.TlStrpBtn_Roll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -138,6 +133,11 @@ Namespace GlobalApp_Form
             Me.TlStrpBtn_Roll.Size = New System.Drawing.Size(23, 22)
             Me.TlStrpBtn_Roll.Text = "ToolStripButton1"
             Me.TlStrpBtn_Roll.ToolTipText = "同步滚动"
+            '
+            'ToolStripSeparator3
+            '
+            Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+            Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
             '
             'MenuStrip1
             '
@@ -356,7 +356,7 @@ Namespace GlobalApp_Form
             '
             Me.AboutAMEToolStripMenuItem.Name = "AboutAMEToolStripMenuItem"
             Me.AboutAMEToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-            Me.AboutAMEToolStripMenuItem.Text = "About AME"
+            Me.AboutAMEToolStripMenuItem.Text = "About DAMIE"
             '
             'APPLICATION_MAINFORM
             '
@@ -373,7 +373,7 @@ Namespace GlobalApp_Form
             Me.MainMenuStrip = Me.MenuStrip1
             Me.Name = "APPLICATION_MAINFORM"
             Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-            Me.Text = "基坑群实测数据动态分析 - DAMIE"
+            Me.Text = "DAMIE"
             Me.StatusStrip1.ResumeLayout(False)
             Me.StatusStrip1.PerformLayout()
             Me.ToolStrip1.ResumeLayout(False)

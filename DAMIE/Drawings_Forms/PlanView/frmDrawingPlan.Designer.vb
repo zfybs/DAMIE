@@ -53,14 +53,14 @@ Partial Class frmDrawingPlan
         Me.Btn_Import = New System.Windows.Forms.Button()
         Me.Btn_Export = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.SuspendLayout()
+        Me.GroupBox1.SuspendLayout
+        Me.Panel1.SuspendLayout
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.SuspendLayout
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
+        Me.Label1.AutoSize = true
         Me.Label1.Location = New System.Drawing.Point(6, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 12)
@@ -86,7 +86,7 @@ Partial Class frmDrawingPlan
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(356, 56)
         Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "特征形状ID值"
         '
         'TextBoxAllRegions
@@ -99,7 +99,7 @@ Partial Class frmDrawingPlan
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.AutoSize = true
         Me.Label2.Location = New System.Drawing.Point(178, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 12)
@@ -109,7 +109,7 @@ Partial Class frmDrawingPlan
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
+        Me.Label4.AutoSize = true
         Me.Label4.Location = New System.Drawing.Point(12, 48)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 12)
@@ -119,7 +119,7 @@ Partial Class frmDrawingPlan
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
+        Me.Label7.AutoSize = true
         Me.Label7.Location = New System.Drawing.Point(5, 9)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(209, 12)
@@ -129,17 +129,17 @@ Partial Class frmDrawingPlan
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
+        Me.Label8.AutoSize = true
         Me.Label8.Location = New System.Drawing.Point(3, 20)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(95, 12)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Visio中的形状ID"
-        Me.ToolTip1.SetToolTip(Me.Label8, "Visio平面图中用于坐标变换的两个定位点的形状ID，" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "这两个点分别代表ABCD基坑群的左下角与右上角。")
+        Me.ToolTip1.SetToolTip(Me.Label8, "Visio平面图中用于坐标变换的两个定位点的形状ID，"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"这两个点分别代表ABCD基坑群的左下角与右上角。")
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
+        Me.Label9.AutoSize = true
         Me.Label9.Location = New System.Drawing.Point(3, 40)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(101, 12)
@@ -149,7 +149,7 @@ Partial Class frmDrawingPlan
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
+        Me.Label10.AutoSize = true
         Me.Label10.Location = New System.Drawing.Point(3, 60)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(101, 12)
@@ -172,12 +172,12 @@ Partial Class frmDrawingPlan
         Me.BtnGenerate.Size = New System.Drawing.Size(75, 23)
         Me.BtnGenerate.TabIndex = 3
         Me.BtnGenerate.Text = "确定"
-        Me.BtnGenerate.UseVisualStyleBackColor = True
+        Me.BtnGenerate.UseVisualStyleBackColor = true
         '
         'TextBoxFilePath
         '
-        Me.TextBoxFilePath.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBoxFilePath.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TextBoxFilePath.Location = New System.Drawing.Point(88, 13)
         Me.TextBoxFilePath.MinimumSize = New System.Drawing.Size(210, 21)
         Me.TextBoxFilePath.Name = "TextBoxFilePath"
@@ -192,17 +192,17 @@ Partial Class frmDrawingPlan
         Me.btnChooseVisioPlanView.Size = New System.Drawing.Size(75, 23)
         Me.btnChooseVisioPlanView.TabIndex = 4
         Me.btnChooseVisioPlanView.Text = "Visio文档"
-        Me.btnChooseVisioPlanView.UseVisualStyleBackColor = True
+        Me.btnChooseVisioPlanView.UseVisualStyleBackColor = true
         '
         'ChkBx_PointInfo
         '
-        Me.ChkBx_PointInfo.AutoSize = True
+        Me.ChkBx_PointInfo.AutoSize = true
         Me.ChkBx_PointInfo.Location = New System.Drawing.Point(6, 158)
         Me.ChkBx_PointInfo.Name = "ChkBx_PointInfo"
         Me.ChkBx_PointInfo.Size = New System.Drawing.Size(72, 16)
         Me.ChkBx_PointInfo.TabIndex = 7
         Me.ChkBx_PointInfo.Text = "测点信息"
-        Me.ChkBx_PointInfo.UseVisualStyleBackColor = True
+        Me.ChkBx_PointInfo.UseVisualStyleBackColor = true
         '
         'txtbx_ShapeName_MonitorPointTag
         '
@@ -244,11 +244,11 @@ Partial Class frmDrawingPlan
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 35)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 4
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(360, 83)
         Me.TableLayoutPanel1.TabIndex = 3
         '
@@ -304,7 +304,7 @@ Partial Class frmDrawingPlan
         '
         'Label12
         '
-        Me.Label12.AutoSize = True
+        Me.Label12.AutoSize = true
         Me.Label12.Location = New System.Drawing.Point(242, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(53, 12)
@@ -323,7 +323,7 @@ Partial Class frmDrawingPlan
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
+        Me.Label11.AutoSize = true
         Me.Label11.Location = New System.Drawing.Point(122, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(53, 12)
@@ -337,7 +337,7 @@ Partial Class frmDrawingPlan
         Me.Btn_Import.Size = New System.Drawing.Size(63, 23)
         Me.Btn_Import.TabIndex = 9
         Me.Btn_Import.Text = "导入"
-        Me.Btn_Import.UseVisualStyleBackColor = True
+        Me.Btn_Import.UseVisualStyleBackColor = true
         '
         'Btn_Export
         '
@@ -346,7 +346,7 @@ Partial Class frmDrawingPlan
         Me.Btn_Export.Size = New System.Drawing.Size(63, 23)
         Me.Btn_Export.TabIndex = 9
         Me.Btn_Export.Text = "导出"
-        Me.Btn_Export.UseVisualStyleBackColor = True
+        Me.Btn_Export.UseVisualStyleBackColor = true
         '
         'btnCancel
         '
@@ -356,12 +356,12 @@ Partial Class frmDrawingPlan
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 10
         Me.btnCancel.Text = "取消"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.UseVisualStyleBackColor = true
         '
         'frmDrawingPlan
         '
         Me.AcceptButton = Me.BtnGenerate
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 12!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(377, 355)
@@ -377,19 +377,20 @@ Partial Class frmDrawingPlan
         Me.Controls.Add(Me.TextBoxPageName)
         Me.Controls.Add(Me.Label4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
+        Me.MaximizeBox = false
         Me.Name = "frmDrawingPlan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "开挖平面图"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.GroupBox1.ResumeLayout(false)
+        Me.GroupBox1.PerformLayout
+        Me.Panel1.ResumeLayout(false)
+        Me.Panel1.PerformLayout
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanel1.PerformLayout
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TextBoxInfoBoxID As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox

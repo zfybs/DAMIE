@@ -37,18 +37,19 @@ Partial Class frmRolling
         Me.CheckBox_SectionalView = New System.Windows.Forms.CheckBox()
         Me.ProgressBar_SectionalView = New System.Windows.Forms.ProgressBar()
         Me.Panel_Roll = New System.Windows.Forms.Panel()
+        Me.btnRoll = New System.Windows.Forms.Button()
         Me.NumChanging = New DAMIE.AME_UserControl.UsrCtrl_NumberChanging()
         Me.Calendar_Construction = New System.Windows.Forms.MonthCalendar()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ListBoxMonitorData = New DAMIE.AME_UserControl.ListBox_NoReplyForKeyDown()
-        Me.GroupBox1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel_Roll.SuspendLayout()
-        Me.SuspendLayout()
+        Me.GroupBox1.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.Panel_Roll.SuspendLayout
+        Me.SuspendLayout
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
+        Me.Label4.AutoSize = true
         Me.Label4.Location = New System.Drawing.Point(3, 44)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 12)
@@ -57,7 +58,7 @@ Partial Class frmRolling
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.AutoSize = true
         Me.Label3.Location = New System.Drawing.Point(276, 21)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 12)
@@ -67,7 +68,7 @@ Partial Class frmRolling
         'LabelDate
         '
         Me.LabelDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LabelDate.Font = New System.Drawing.Font("Times New Roman", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDate.Font = New System.Drawing.Font("Times New Roman", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.LabelDate.Location = New System.Drawing.Point(156, 40)
         Me.LabelDate.Name = "LabelDate"
         Me.LabelDate.Size = New System.Drawing.Size(93, 21)
@@ -76,29 +77,29 @@ Partial Class frmRolling
         '
         'btnRefresh
         '
-        Me.btnRefresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRefresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btnRefresh.Location = New System.Drawing.Point(371, 316)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
         Me.btnRefresh.TabIndex = 19
         Me.btnRefresh.Text = "刷新(&R)"
-        Me.btnRefresh.UseVisualStyleBackColor = True
+        Me.btnRefresh.UseVisualStyleBackColor = true
         '
         'btnOutPut
         '
-        Me.btnOutPut.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnOutPut.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btnOutPut.Location = New System.Drawing.Point(371, 345)
         Me.btnOutPut.Name = "btnOutPut"
         Me.btnOutPut.Size = New System.Drawing.Size(75, 23)
         Me.btnOutPut.TabIndex = 20
         Me.btnOutPut.Text = "输出..."
-        Me.btnOutPut.UseVisualStyleBackColor = True
+        Me.btnOutPut.UseVisualStyleBackColor = true
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.btn_GroupHandle)
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.Panel_Roll)
@@ -111,18 +112,18 @@ Partial Class frmRolling
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(459, 380)
         Me.GroupBox1.TabIndex = 19
-        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "选择要进行同步滚动和结果输出的对象"
         '
         'btn_GroupHandle
         '
-        Me.btn_GroupHandle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_GroupHandle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btn_GroupHandle.Location = New System.Drawing.Point(290, 345)
         Me.btn_GroupHandle.Name = "btn_GroupHandle"
         Me.btn_GroupHandle.Size = New System.Drawing.Size(75, 23)
         Me.btn_GroupHandle.TabIndex = 26
         Me.btn_GroupHandle.Text = "批量操作"
-        Me.btn_GroupHandle.UseVisualStyleBackColor = True
+        Me.btn_GroupHandle.UseVisualStyleBackColor = true
         '
         'Panel2
         '
@@ -137,13 +138,13 @@ Partial Class frmRolling
         '
         'CheckBox_PlanView
         '
-        Me.CheckBox_PlanView.AutoSize = True
+        Me.CheckBox_PlanView.AutoSize = true
         Me.CheckBox_PlanView.Location = New System.Drawing.Point(6, 11)
         Me.CheckBox_PlanView.Name = "CheckBox_PlanView"
         Me.CheckBox_PlanView.Size = New System.Drawing.Size(84, 16)
         Me.CheckBox_PlanView.TabIndex = 23
         Me.CheckBox_PlanView.Text = "开挖平面图"
-        Me.CheckBox_PlanView.UseVisualStyleBackColor = True
+        Me.CheckBox_PlanView.UseVisualStyleBackColor = true
         '
         'ProgressBar_PlanView
         '
@@ -154,13 +155,13 @@ Partial Class frmRolling
         '
         'CheckBox_SectionalView
         '
-        Me.CheckBox_SectionalView.AutoSize = True
+        Me.CheckBox_SectionalView.AutoSize = true
         Me.CheckBox_SectionalView.Location = New System.Drawing.Point(6, 44)
         Me.CheckBox_SectionalView.Name = "CheckBox_SectionalView"
         Me.CheckBox_SectionalView.Size = New System.Drawing.Size(84, 16)
         Me.CheckBox_SectionalView.TabIndex = 23
         Me.CheckBox_SectionalView.Text = "开挖剖面图"
-        Me.CheckBox_SectionalView.UseVisualStyleBackColor = True
+        Me.CheckBox_SectionalView.UseVisualStyleBackColor = true
         '
         'ProgressBar_SectionalView
         '
@@ -171,6 +172,7 @@ Partial Class frmRolling
         '
         'Panel_Roll
         '
+        Me.Panel_Roll.Controls.Add(Me.btnRoll)
         Me.Panel_Roll.Controls.Add(Me.LabelDate)
         Me.Panel_Roll.Controls.Add(Me.NumChanging)
         Me.Panel_Roll.Controls.Add(Me.Calendar_Construction)
@@ -180,6 +182,15 @@ Partial Class frmRolling
         Me.Panel_Roll.Name = "Panel_Roll"
         Me.Panel_Roll.Size = New System.Drawing.Size(258, 251)
         Me.Panel_Roll.TabIndex = 22
+        '
+        'btnRoll
+        '
+        Me.btnRoll.Location = New System.Drawing.Point(63, 36)
+        Me.btnRoll.Name = "btnRoll"
+        Me.btnRoll.Size = New System.Drawing.Size(75, 23)
+        Me.btnRoll.TabIndex = 22
+        Me.btnRoll.Text = "滚动"
+        Me.btnRoll.UseVisualStyleBackColor = true
         '
         'NumChanging
         '
@@ -196,13 +207,13 @@ Partial Class frmRolling
         Me.Calendar_Construction.MaxDate = New Date(2014, 10, 5, 0, 0, 0, 0)
         Me.Calendar_Construction.MinDate = New Date(2013, 1, 1, 0, 0, 0, 0)
         Me.Calendar_Construction.Name = "Calendar_Construction"
-        Me.Calendar_Construction.ShowTodayCircle = False
-        Me.Calendar_Construction.ShowWeekNumbers = True
+        Me.Calendar_Construction.ShowTodayCircle = false
+        Me.Calendar_Construction.ShowWeekNumbers = true
         Me.Calendar_Construction.TabIndex = 13
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
+        Me.Label5.AutoSize = true
         Me.Label5.Location = New System.Drawing.Point(3, 10)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 12)
@@ -211,11 +222,11 @@ Partial Class frmRolling
         '
         'ListBoxMonitorData
         '
-        Me.ListBoxMonitorData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListBoxMonitorData.FormattingEnabled = True
-        Me.ListBoxMonitorData.HorizontalScrollbar = True
+        Me.ListBoxMonitorData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.ListBoxMonitorData.FormattingEnabled = true
+        Me.ListBoxMonitorData.HorizontalScrollbar = true
         Me.ListBoxMonitorData.ItemHeight = 12
         Me.ListBoxMonitorData.Location = New System.Drawing.Point(276, 39)
         Me.ListBoxMonitorData.MinimumSize = New System.Drawing.Size(4, 184)
@@ -227,22 +238,22 @@ Partial Class frmRolling
         '
         'frmRolling
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 12!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(483, 404)
         Me.Controls.Add(Me.GroupBox1)
         Me.MinimumSize = New System.Drawing.Size(457, 432)
         Me.Name = "frmRolling"
-        Me.Text = "同步滚动"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel_Roll.ResumeLayout(False)
-        Me.Panel_Roll.PerformLayout()
-        Me.ResumeLayout(False)
+        Me.Text = "动态同步控制"
+        Me.GroupBox1.ResumeLayout(false)
+        Me.GroupBox1.PerformLayout
+        Me.Panel2.ResumeLayout(false)
+        Me.Panel2.PerformLayout
+        Me.Panel_Roll.ResumeLayout(false)
+        Me.Panel_Roll.PerformLayout
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
 
     Friend WithEvents ListBoxMonitorData As ListBox_NoReplyForKeyDown
@@ -263,4 +274,5 @@ Partial Class frmRolling
     Friend WithEvents ProgressBar_SectionalView As System.Windows.Forms.ProgressBar
     Friend WithEvents Panel_Roll As System.Windows.Forms.Panel
     Friend WithEvents btn_GroupHandle As System.Windows.Forms.Button
+    Friend WithEvents btnRoll As System.Windows.Forms.Button
 End Class

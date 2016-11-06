@@ -1,11 +1,8 @@
-﻿Imports Microsoft.Office.Interop.Excel
-Imports Office = Microsoft.Office.Core
-Imports DAMIE.Miscellaneous
-Imports DAMIE.Constants
-Imports DAMIE.Constants.Data_Drawing_Format
-Imports DAMIE.All_Drawings_In_Application
-Imports DAMIE.GlobalApp_Form
+﻿Imports DAMIE.Constants
 Imports DAMIE.DataBase
+Imports DAMIE.Miscellaneous
+Imports Microsoft.Office.Core
+Imports Microsoft.Office.Interop.Excel
 
 Namespace All_Drawings_In_Application
     ''' <summary>
@@ -22,23 +19,23 @@ Namespace All_Drawings_In_Application
         ''' </summary>
         ''' <remarks>它包括每一条数据系列的对象，及其对应的日期、开挖深度的标志线、记录开挖深度值的文本框</remarks>
         Public Class SeriesTag_Incline
-            Inherits clsDrawing_Mnt_RollingBase.SeriesTag
+            Inherits SeriesTag
 
             ''' <summary>
             ''' 与数据系列相关联的挖深直线
             ''' </summary>
-            Private P_DepthLine As Shape
+            Private P_DepthLine As Microsoft.Office.Interop.Excel.Shape
             ''' <summary>
             ''' 与数据系列相关联的挖深直线
             ''' </summary>
             ''' <value></value>
             ''' <returns></returns>
             ''' <remarks></remarks>
-            Public Property DepthLine As Shape
+            Public Property DepthLine As Microsoft.Office.Interop.Excel.Shape
                 Get
                     Return Me.P_DepthLine
                 End Get
-                Set(value As Shape)
+                Set(value As Microsoft.Office.Interop.Excel.Shape)
                     Me.P_DepthLine = value
                 End Set
             End Property
@@ -47,18 +44,18 @@ Namespace All_Drawings_In_Application
             ''' 与数据系列相关联的文本框
             ''' </summary>
             ''' 开挖深度信息的文本框
-            Private P_DepthText As Shape
+            Private P_DepthText As Microsoft.Office.Interop.Excel.Shape
             ''' <summary>
             ''' 与数据系列相关联的文本框。设置文本框中的文字： DepthTextbox.TextFrame2.TextRange.Text
             ''' </summary>
             ''' <value></value>
             ''' <returns></returns>
             ''' <remarks></remarks>
-            Public Property DepthTextbox As Shape
+            Public Property DepthTextbox As Microsoft.Office.Interop.Excel.Shape
                 Get
                     Return Me.P_DepthText
                 End Get
-                Set(value As Shape)
+                Set(value As Microsoft.Office.Interop.Excel.Shape)
                     Me.P_DepthText = value
                 End Set
             End Property
@@ -71,19 +68,15 @@ Namespace All_Drawings_In_Application
             ''' <param name="DepthLine">与数据系列相关联的挖深直线</param>
             ''' <param name="DepthText">与数据系列相关联的文本框</param>
             ''' <remarks></remarks>
-            Public Sub New(ByVal Series As Series, ByVal ConstructionDate As Date, _
-                         Optional ByVal DepthLine As Shape = Nothing, _
-                         Optional ByVal DepthText As TextFrame2 = Nothing)
+            Public Sub New(ByVal Series As Series, ByVal ConstructionDate As Date,
+                         Optional ByVal DepthLine As Microsoft.Office.Interop.Excel.Shape = Nothing,
+                         Optional ByVal DepthText As Microsoft.Office.Interop.Excel.TextFrame2 = Nothing)
                 Call MyBase.New(Series, ConstructionDate)
                 Me.P_DepthLine = DepthLine
                 Me.P_DepthText = DepthText
             End Sub
 
         End Class
-
-#End Region
-
-#Region "  ---  Constants"
 
 #End Region
 
@@ -97,9 +90,9 @@ Namespace All_Drawings_In_Application
         ''' <remarks></remarks>
         Protected Overrides Property ChartSize_sugested As ChartSize
             Get
-                Return New ChartSize(Data_Drawing_Format.Drawing_Incline.ChartHeight, _
-                                Data_Drawing_Format.Drawing_Incline.ChartWidth, _
-                                Data_Drawing_Format.Drawing_Incline.MarginOut_Height, _
+                Return New ChartSize(Data_Drawing_Format.Drawing_Incline.ChartHeight,
+                                Data_Drawing_Format.Drawing_Incline.ChartWidth,
+                                Data_Drawing_Format.Drawing_Incline.MarginOut_Height,
                                 Data_Drawing_Format.Drawing_Incline.MarginOut_Width)
             End Get
             Set(value As ChartSize)
@@ -115,8 +108,8 @@ Namespace All_Drawings_In_Application
         ''' <remarks></remarks>
         Protected Overrides ReadOnly Property Legend_Location As LegendLocation
             Get
-                Return New LegendLocation(LegendHeight:=Drawing_Incline.Legend_Height, _
-                                          LegendWidth:=Drawing_Incline.Legend_Width)
+                Return New LegendLocation(LegendHeight:=Data_Drawing_Format.Drawing_Incline.Legend_Height,
+                                          LegendWidth:=Data_Drawing_Format.Drawing_Incline.Legend_Width)
             End Get
         End Property
 
@@ -152,6 +145,20 @@ Namespace All_Drawings_In_Application
                 Return False
             End Get
         End Property
+
+        ''' <summary> 测斜管的顶部的绝对标高。在测斜管的监测数据中，深度值是相对于测斜管顶部的深度，
+        ''' 而在监测曲线图中绘制开挖深度或者构件深度时，其中的深度是按绝对标高给出来的，所以需要此属性的值来进行二者之间的转换。
+        ''' </summary>
+        Private Property _inclineTopElevaion As Single
+        ''' <summary> 测斜管的顶部的绝对标高。在测斜管的监测数据中，深度值是相对于测斜管顶部的深度，
+        ''' 而在监测曲线图中绘制开挖深度或者构件深度时，其中的深度是按绝对标高给出来的，所以需要此属性的值来进行二者之间的转换。
+        ''' </summary>
+        Public ReadOnly Property InclineTopElevaion As Single
+            Get
+                Return _inclineTopElevaion
+            End Get
+        End Property
+
 #End Region
 
 #Region "  ---  Fields"
@@ -168,12 +175,6 @@ Namespace All_Drawings_In_Application
         ''' <remarks>返回一个数组，数组中有两个元素，第一个为开挖深度的直线；
         ''' 第二个为写有相应文字的文本框</remarks>
         Private _ExcavationDepth_lineAndTextbox As SeriesTag_Incline
-
-        ''' <summary>
-        ''' 基准标高，即将标高数据换算为相对于地面标高的深度数据
-        ''' </summary>
-        ''' <remarks></remarks>
-        Private DepthRefer As Single = Project_Expo.Elevation_GroundSurface
 
         Private F_YValues As Single()
 
@@ -197,16 +198,16 @@ Namespace All_Drawings_In_Application
         ''' <param name="ProcessRegionData">在施工进度工作表中，每一个基坑区域相关的各种信息，比如区域名称，区域的描述，
         ''' 区域数据的Range对象，区域所属的基坑ID及其ID的数据等</param>
         ''' <remarks></remarks>
-        Public Sub New(ByVal DataSheet As Worksheet, ByVal DrawingChart As Chart, _
-                        ByVal ParentApp As Cls_ExcelForMonitorDrawing, ByVal DateSpan As DateSpan, _
-                       ByVal type As DrawingType, ByVal CanRoll As Boolean, ByVal Info As TextFrame2, _
-                       ByVal DrawingTag As MonitorInfo, ByVal MonitorType As MntType, _
-                       ByVal date_ColNum As Dictionary(Of Date, Integer), _
-                       ByVal usedRg As Range, _
-                       ByVal FirstSeriesTag As SeriesTag_Incline, _
+        Public Sub New(ByVal DataSheet As Worksheet, ByVal DrawingChart As Chart,
+                        ByVal ParentApp As Cls_ExcelForMonitorDrawing, ByVal DateSpan As DateSpan,
+                       ByVal type As DrawingType, ByVal CanRoll As Boolean, ByVal Info As Microsoft.Office.Interop.Excel.TextFrame2,
+                       ByVal DrawingTag As MonitorInfo, ByVal MonitorType As MntType,
+                       ByVal date_ColNum As Dictionary(Of Date, Integer),
+                       ByVal usedRg As Range,
+                       ByVal FirstSeriesTag As SeriesTag_Incline,
                        Optional ByVal ProcessRegionData As clsData_ProcessRegionData = Nothing)
             '
-            Call MyBase.New(DataSheet, DrawingChart, ParentApp, type, CanRoll, Info, DrawingTag, MonitorType, _
+            Call MyBase.New(DataSheet, DrawingChart, ParentApp, type, CanRoll, Info, DrawingTag, MonitorType,
                             DateSpan, New SeriesTag(FirstSeriesTag.series, FirstSeriesTag.ConstructionDate))
             ' --------------------------------------------
             Try
@@ -217,6 +218,8 @@ Namespace All_Drawings_In_Application
                     ._ExcavationDepth_lineAndTextbox = FirstSeriesTag
                     .F_dicDateAndColumnNumber = date_ColNum
                     .P_ProcessRegionData = ProcessRegionData
+                    ’
+                    ._inclineTopElevaion = Project_Expo.InclineTopElevaion
                     ' ----- 集合数据的记录
                     .F_DicSeries_Tag.Item(LowIndexOfObjectsInExcel.SeriesInSeriesCollection) = FirstSeriesTag
                 End With
@@ -267,16 +270,16 @@ Namespace All_Drawings_In_Application
                 ' -------------------- 移动开挖深度的直线与文本框
                 If Me.P_ProcessRegionData IsNot Nothing Then
                     With Me.P_ProcessRegionData.Date_Elevation
-                        Dim excavationDepth As Single
+                        Dim excavationElevation As Single
                         Try
-                            excavationDepth = .Item(dateThisday)
+                            excavationElevation = .Item(dateThisday)
                             'ClsData_DataBase.GetElevation(P_rgExcavationProcess, dateThisday)
                         Catch ex As Exception
                             Debug.Print("上面的Exception已经被Try...Catch语句块捕获，不用担心。出错代码位于ClsDrawing_Mnt_Incline.vb中。")
                             Dim ClosestDate As Date = ClsData_DataBase.FindTheClosestDateInSortedList(.Keys, dateThisday)
-                            excavationDepth = .Item(ClosestDate)
+                            excavationElevation = .Item(ClosestDate)
                         End Try
-                        Call MoveExcavation(_ExcavationDepth_lineAndTextbox, excavationDepth, dateThisday, State)
+                        Call MoveExcavation(_ExcavationDepth_lineAndTextbox, excavationElevation, dateThisday, State)
                     End With
                 End If
                 app.ScreenUpdating = True
@@ -287,18 +290,19 @@ Namespace All_Drawings_In_Application
         ''' 根据每天不同的挖深情况，移动挖深线的位置
         ''' </summary>
         ''' <param name="ExcavationLineAndTextBox">表示挖深深度的直线，文本框中记录有“挖深”二字</param>
-        ''' <param name="depth">当天开挖深度</param>
+        ''' <param name="excavElevation"> 当天开挖标高 </param>
         ''' <param name="dateThisday">施工当天的日期</param>
         ''' <remarks></remarks>
-        Private Sub MoveExcavation(ByVal ExcavationLineAndTextBox As SeriesTag_Incline, ByVal depth As Single, _
+        Private Sub MoveExcavation(ByVal ExcavationLineAndTextBox As SeriesTag_Incline, ByVal excavElevation As Single,
                                    ByVal dateThisday As Date, ByVal State As TodayState)
-            Dim iline As Shape = ExcavationLineAndTextBox.DepthLine
-            Dim itextbox As Shape = ExcavationLineAndTextBox.DepthTextbox
+            Dim iline As Microsoft.Office.Interop.Excel.Shape = ExcavationLineAndTextBox.DepthLine
+            Dim itextbox As Microsoft.Office.Interop.Excel.Shape = ExcavationLineAndTextBox.DepthTextbox
             '
             If State = TodayState.DateMatched Or State = TodayState.DateNotFound Then
-                Dim relativedepth As Single = DepthRefer - depth
+                ' 将当天的开挖标高转换为相对于测斜管顶部的深度值
+                Dim relativedepth As Single = _inclineTopElevaion - excavElevation 'Project_Expo.Elevation_GroundSurface - excavElevation
                 '
-                Dim axisY As Axis = Me.Chart.Axes(XlAxisType.xlValue)
+                Dim axisY As Axis = Me.Chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue)
                 Dim scalemax As Single = axisY.MaximumScale
                 Dim scalemin As Single = axisY.MinimumScale
                 '
@@ -310,14 +314,14 @@ Namespace All_Drawings_In_Application
                 End With
                 '
                 With iline
-                    .Visible = Microsoft.Office.Core.MsoTriState.msoCTrue
+                    .Visible = MsoTriState.msoCTrue
                     .Top = linetop
                 End With
 
                 '
                 If itextbox IsNot Nothing Then
                     With itextbox
-                        .Visible = Microsoft.Office.Core.MsoTriState.msoCTrue
+                        .Visible = MsoTriState.msoCTrue
                         .Top = iline.Top - itextbox.Height
 
                         '指示此基坑当前的状态，为向下开挖还是向上建造。
@@ -341,7 +345,7 @@ Namespace All_Drawings_In_Application
                 End If
 
             Else
-                iline.Visible = Microsoft.Office.Core.MsoTriState.msoFalse
+                iline.Visible = MsoTriState.msoFalse
                 '
                 If itextbox IsNot Nothing Then
                     itextbox.Visible = False
@@ -411,7 +415,7 @@ Namespace All_Drawings_In_Application
                             ' find the corresponding depth of the maximun displacement
                             '如果 MATCH 函数查找匹配项不成功，在Excel中它会返回错误值 #N/A。 而在VB.NET中，它会直接报错。
                             Dim Row_Max As Integer = rgDisplacement.Cells(1, 1).row - 1 + .Match(max, MonitorData, 0)
-                            Dim sngDepthForMax As Single = Me.Sheet_Data.Cells(Row_Max, Mnt_Incline.ColNum_Depth).value
+                            Dim sngDepthForMax As Single = Me.Sheet_Data.Cells(Row_Max, Data_Drawing_Format.Mnt_Incline.ColNum_Depth).value
                             StrdepthForMax = sngDepthForMax.ToString("0.0")
                         Catch ex As Exception
                             StrdepthForMax = " Null "
@@ -421,7 +425,7 @@ Namespace All_Drawings_In_Application
                             ' find the corresponding depth of the mininum displacement
                             '如果 MATCH 函数查找匹配项不成功，在Excel中它会返回错误值 #N/A。 而在VB.NET中，它会直接报错。
                             Dim Row_Min As Integer = rgDisplacement.Cells(1, 1).row - 1 + .Match(min, MonitorData, 0)
-                            Dim sngDepthForMin As Single = Me.Sheet_Data.Cells(Row_Min, Mnt_Incline.ColNum_Depth).value
+                            Dim sngDepthForMin As Single = Me.Sheet_Data.Cells(Row_Min, Data_Drawing_Format.Mnt_Incline.ColNum_Depth).value
                             StrdepthForMin = sngDepthForMin.ToString("0.0")
                         Catch ex As Exception
                             StrdepthForMin = " Null "
@@ -441,6 +445,7 @@ Namespace All_Drawings_In_Application
                 End If
             End With
         End Sub
+
 #End Region
 
 #Region "  ---  数据列的锁定与删除"
@@ -458,9 +463,9 @@ Namespace All_Drawings_In_Application
 
         End Sub
         '添加
-        Public Overrides Function CopySeries(ByVal SourceSeriesIndex As Integer) As Generic.KeyValuePair(Of Integer, SeriesTag)
+        Public Overrides Function CopySeries(ByVal SourceSeriesIndex As Integer) As KeyValuePair(Of Integer, SeriesTag)
             ' 调用基类中的方法
-            Dim NewSeriesIndex_Tag As Generic.KeyValuePair(Of Integer, SeriesTag) = MyBase.CopySeries(SourceSeriesIndex)
+            Dim NewSeriesIndex_Tag As KeyValuePair(Of Integer, SeriesTag) = MyBase.CopySeries(SourceSeriesIndex)
             '
             ' ------------ 为新的数据列创建其对应的Tag
             ' ------------ 这是这个类与其基类所不同的地方，将下面这个函数删除，即与其基类中的这个方法相同了。  ------------
@@ -474,7 +479,7 @@ Namespace All_Drawings_In_Application
                 newTag = Me.ConstructNewTag(F_DicSeries_Tag.Item(SourceSeriesIndex), newTag.series)
             Catch ex As Exception
                 Debug.Print(ex.Message)
-                MessageBox.Show("在设置""表示开挖深度的标志线与文本框""时出错", "Error", _
+                MessageBox.Show("在设置""表示开挖深度的标志线与文本框""时出错", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
             '---------------------- 
@@ -512,27 +517,27 @@ Namespace All_Drawings_In_Application
                         '线条的颜色
                         .Line.ForeColor.RGB = seriesColor
                         '线条的阴影
-                        .Shadow.Type = Microsoft.Office.Core.MsoShadowType.msoShadow21
+                        .Shadow.Type = MsoShadowType.msoShadow21
                         '线条的缩放
-                        .ScaleWidth(Factor:=0.5, _
-                                    RelativeToOriginalSize:=Microsoft.Office.Core.MsoTriState.msoFalse, _
-                                    Scale:=Microsoft.Office.Core.MsoScaleFrom.msoScaleFromTopLeft)
+                        .ScaleWidth(Factor:=0.5,
+                                    RelativeToOriginalSize:=MsoTriState.msoFalse,
+                                    Scale:=MsoScaleFrom.msoScaleFromTopLeft)
                     End With
                 End If
             Catch ex As Exception
                 Debug.Print(ex.Message)
-                MessageBox.Show("在设置""表示开挖深度的标志线""时出错", "Error", _
+                MessageBox.Show("在设置""表示开挖深度的标志线""时出错", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
             '复制一个新的开挖深度文本框
             Try
                 If SourceTag.DepthTextbox IsNot Nothing Then
-                    Dim oldTxtShp As Shape = SourceTag.DepthTextbox
+                    Dim oldTxtShp As Microsoft.Office.Interop.Excel.Shape = SourceTag.DepthTextbox
                     newTag.DepthTextbox = oldTxtShp.Duplicate
 
                     '设置文本框的位置
-                    Dim newTxtShp As Shape = newTag.DepthTextbox
+                    Dim newTxtShp As Microsoft.Office.Interop.Excel.Shape = newTag.DepthTextbox
                     With newTxtShp
                         '设置文本框的位置
                         .Top = oldTxtShp.Top
@@ -550,7 +555,7 @@ Namespace All_Drawings_In_Application
                 End If
             Catch ex As Exception
                 Debug.Print(ex.Message)
-                MessageBox.Show("在设置""表示开挖深度的文本框""时出错", "Error", _
+                MessageBox.Show("在设置""表示开挖深度的文本框""时出错", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
             Return newTag

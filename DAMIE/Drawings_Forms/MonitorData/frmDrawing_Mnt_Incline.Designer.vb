@@ -44,6 +44,8 @@ Partial Class frmDrawing_Mnt_Incline
         Me.Panel_Static = New System.Windows.Forms.Panel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ComboBoxOpenedWorkbook = New System.Windows.Forms.ComboBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel_Dynamic.SuspendLayout()
         Me.Panel_Static.SuspendLayout()
@@ -79,18 +81,18 @@ Partial Class frmDrawing_Mnt_Incline
         'btnGenerate
         '
         Me.btnGenerate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGenerate.Location = New System.Drawing.Point(308, 261)
+        Me.btnGenerate.Location = New System.Drawing.Point(354, 290)
         Me.btnGenerate.Name = "btnGenerate"
-        Me.btnGenerate.Size = New System.Drawing.Size(90, 27)
+        Me.btnGenerate.Size = New System.Drawing.Size(75, 23)
         Me.btnGenerate.TabIndex = 4
-        Me.btnGenerate.Text = "Generate"
+        Me.btnGenerate.Text = "生成"
         Me.btnGenerate.UseVisualStyleBackColor = True
         '
         'chkBoxOpenNewExcel
         '
         Me.chkBoxOpenNewExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chkBoxOpenNewExcel.AutoSize = True
-        Me.chkBoxOpenNewExcel.Location = New System.Drawing.Point(298, 69)
+        Me.chkBoxOpenNewExcel.Location = New System.Drawing.Point(319, 69)
         Me.chkBoxOpenNewExcel.Name = "chkBoxOpenNewExcel"
         Me.chkBoxOpenNewExcel.Size = New System.Drawing.Size(90, 16)
         Me.chkBoxOpenNewExcel.TabIndex = 6
@@ -106,14 +108,14 @@ Partial Class frmDrawing_Mnt_Incline
         Me.ListBoxWorksheetsName.ItemHeight = 12
         Me.ListBoxWorksheetsName.Location = New System.Drawing.Point(12, 51)
         Me.ListBoxWorksheetsName.Name = "ListBoxWorksheetsName"
-        Me.ListBoxWorksheetsName.Size = New System.Drawing.Size(162, 220)
+        Me.ListBoxWorksheetsName.Size = New System.Drawing.Size(161, 256)
         Me.ListBoxWorksheetsName.TabIndex = 7
         '
         'ComboBox_ExcavRegion
         '
         Me.ComboBox_ExcavRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_ExcavRegion.FormattingEnabled = True
-        Me.ComboBox_ExcavRegion.Location = New System.Drawing.Point(5, 140)
+        Me.ComboBox_ExcavRegion.Location = New System.Drawing.Point(5, 141)
         Me.ComboBox_ExcavRegion.Name = "ComboBox_ExcavRegion"
         Me.ComboBox_ExcavRegion.Size = New System.Drawing.Size(90, 20)
         Me.ComboBox_ExcavRegion.TabIndex = 1
@@ -121,7 +123,7 @@ Partial Class frmDrawing_Mnt_Incline
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 118)
+        Me.Label2.Location = New System.Drawing.Point(3, 119)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 12)
         Me.Label2.TabIndex = 3
@@ -130,7 +132,7 @@ Partial Class frmDrawing_Mnt_Incline
         'btnDrawMonitorPoints
         '
         Me.btnDrawMonitorPoints.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDrawMonitorPoints.Location = New System.Drawing.Point(308, 232)
+        Me.btnDrawMonitorPoints.Location = New System.Drawing.Point(354, 261)
         Me.btnDrawMonitorPoints.Name = "btnDrawMonitorPoints"
         Me.btnDrawMonitorPoints.Size = New System.Drawing.Size(75, 23)
         Me.btnDrawMonitorPoints.TabIndex = 8
@@ -145,11 +147,13 @@ Partial Class frmDrawing_Mnt_Incline
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
         Me.GroupBox1.Controls.Add(Me.RadioButton_Dynamic)
         Me.GroupBox1.Controls.Add(Me.RadioButton_Max_Depth)
-        Me.GroupBox1.Location = New System.Drawing.Point(292, 149)
+        Me.GroupBox1.Location = New System.Drawing.Point(313, 119)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(106, 72)
+        Me.GroupBox1.Size = New System.Drawing.Size(117, 131)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "绘图类型"
@@ -183,9 +187,9 @@ Partial Class frmDrawing_Mnt_Incline
         Me.Panel_Dynamic.Controls.Add(Me.ComboBox_ExcavID)
         Me.Panel_Dynamic.Controls.Add(Me.ComboBox_ExcavRegion)
         Me.Panel_Dynamic.Controls.Add(Me.Label2)
-        Me.Panel_Dynamic.Location = New System.Drawing.Point(180, 101)
+        Me.Panel_Dynamic.Location = New System.Drawing.Point(186, 101)
         Me.Panel_Dynamic.Name = "Panel_Dynamic"
-        Me.Panel_Dynamic.Size = New System.Drawing.Size(106, 170)
+        Me.Panel_Dynamic.Size = New System.Drawing.Size(106, 194)
         Me.Panel_Dynamic.TabIndex = 10
         '
         'ComboBox_MntType
@@ -194,7 +198,7 @@ Partial Class frmDrawing_Mnt_Incline
         Me.ComboBox_MntType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox_MntType.DropDownWidth = 90
         Me.ComboBox_MntType.FormattingEnabled = True
-        Me.ComboBox_MntType.Location = New System.Drawing.Point(185, 71)
+        Me.ComboBox_MntType.Location = New System.Drawing.Point(191, 71)
         Me.ComboBox_MntType.Name = "ComboBox_MntType"
         Me.ComboBox_MntType.Size = New System.Drawing.Size(90, 20)
         Me.ComboBox_MntType.TabIndex = 1
@@ -203,7 +207,7 @@ Partial Class frmDrawing_Mnt_Incline
         '
         Me.Label_MntType.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_MntType.AutoSize = True
-        Me.Label_MntType.Location = New System.Drawing.Point(183, 51)
+        Me.Label_MntType.Location = New System.Drawing.Point(189, 51)
         Me.Label_MntType.Name = "Label_MntType"
         Me.Label_MntType.Size = New System.Drawing.Size(77, 12)
         Me.Label_MntType.TabIndex = 3
@@ -234,7 +238,7 @@ Partial Class frmDrawing_Mnt_Incline
         Me.Panel_Static.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel_Static.Controls.Add(Me.Label3)
         Me.Panel_Static.Controls.Add(Me.ComboBox_WorkingStage)
-        Me.Panel_Static.Location = New System.Drawing.Point(180, 98)
+        Me.Panel_Static.Location = New System.Drawing.Point(186, 98)
         Me.Panel_Static.Name = "Panel_Static"
         Me.Panel_Static.Size = New System.Drawing.Size(106, 73)
         Me.Panel_Static.TabIndex = 11
@@ -247,14 +251,34 @@ Partial Class frmDrawing_Mnt_Incline
         Me.ComboBoxOpenedWorkbook.FormattingEnabled = True
         Me.ComboBoxOpenedWorkbook.Location = New System.Drawing.Point(94, 15)
         Me.ComboBoxOpenedWorkbook.Name = "ComboBoxOpenedWorkbook"
-        Me.ComboBoxOpenedWorkbook.Size = New System.Drawing.Size(303, 20)
+        Me.ComboBoxOpenedWorkbook.Size = New System.Drawing.Size(335, 20)
         Me.ComboBoxOpenedWorkbook.TabIndex = 12
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(6, 77)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(60, 16)
+        Me.CheckBox1.TabIndex = 1
+        Me.CheckBox1.Text = "自定义"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"空间分布1"})
+        Me.ComboBox1.Location = New System.Drawing.Point(6, 100)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(90, 20)
+        Me.ComboBox1.TabIndex = 2
         '
         'frmDrawing_Mnt_Incline
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(410, 300)
+        Me.ClientSize = New System.Drawing.Size(442, 318)
         Me.Controls.Add(Me.ComboBoxOpenedWorkbook)
         Me.Controls.Add(Me.Panel_Static)
         Me.Controls.Add(Me.Label_MntType)
@@ -300,4 +324,6 @@ Partial Class frmDrawing_Mnt_Incline
     Friend WithEvents Panel_Static As System.Windows.Forms.Panel
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents ComboBoxOpenedWorkbook As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 End Class

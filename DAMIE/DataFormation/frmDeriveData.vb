@@ -29,10 +29,10 @@ Public MustInherit Class frmDeriveData
     Protected Const cstRowNum_ColumnTitle As Byte = 1
 
     ''' <summary>
-    ''' 提取的数据中的第一行在工作表中所要放置的行号，一般为第3行。第一行一般用来放数据对应的日期，第二行一般为预留行。
+    ''' 提取的数据中的第一行在工作表中所要放置的行号，一般为第2行。第一行一般用来放数据对应的日期，第二行一般为预留行。
     ''' </summary>
     ''' <remarks></remarks>
-    Protected Const cstRowNum_FirstData As Byte = 3
+    Protected Const cstRowNum_FirstData As Byte = 2
 
     ''' <summary>
     ''' 提取的数据中的第一列在工作表中所要放置的列号，一般为第2列。第1列用来放数据的说明

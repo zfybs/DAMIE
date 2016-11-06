@@ -423,28 +423,36 @@ Public Class frmDeriveData_Word
 
                 ' ------------ 从暂存工作表中将测点标签与对应的数据提取到目标工作表中 ----------
                 '搜索得到的第一个结果的range对象，如果没有搜索到，则返回nothing。
-                Dim rgNextPoint As Excel.Range
+                Dim SearchedPoint As Excel.Range
+                Dim ValueCell As Excel.Range
                 With Me.F_BufferSheet.UsedRange
-                    rgNextPoint = .Find(What:=PointInfo.PointTag, _
-                                                       SearchOrder:=PointInfo.SearchOrder, _
-                                                       LookAt:=XlLookAt.xlPart, _
-                                                       LookIn:=XlFindLookIn.xlValues, _
-                                                       SearchDirection:=XlSearchDirection.xlNext, _
+                    SearchedPoint = .Find(What:=PointInfo.PointTag,
+                                                       SearchOrder:=PointInfo.SearchOrder,
+                                                       LookAt:=XlLookAt.xlPart,
+                                                       LookIn:=XlFindLookIn.xlValues,
+                                                       SearchDirection:=XlSearchDirection.xlNext,
                                                        MatchCase:=False)
-                    If rgNextPoint IsNot Nothing Then
+                    If SearchedPoint IsNot Nothing Then
                         '当搜索到指定查找区域的末尾时，此方法将绕回到区域的开始位置继续搜索。
                         '发生绕回后，要停止搜索，可保存第一个找到的单元格地址，然后测试后面找到的每个单元格地址是否与其相同。
-                        Dim firstAddress As String = rgNextPoint.Address
+                        Dim firstAddress As String = SearchedPoint.Address
                         '提取数据并写入最终的工作表
                         Do
                             With PointInfo
-                                sheetExportTo.Cells(.RowNumToBeWritten, .ColNumToBeWritten).Value = rgNextPoint.Value
-                                sheetExportTo.Cells(.RowNumToBeWritten, .ColNumToBeWritten + 1).Value = rgNextPoint _
-                                    .Offset(0, PointInfo.Offset).Value
+                                sheetExportTo.Cells(.RowNumToBeWritten, .ColNumToBeWritten).Value = SearchedPoint.Value
+
+                                ' 监测值所对应的单元格
+                                If PointInfo.SearchOrder = XlSearchOrder.xlByRows Then
+                                    ValueCell = SearchedPoint.Offset(PointInfo.Offset, 0)
+                                Else
+                                    ValueCell = SearchedPoint.Offset(0, PointInfo.Offset)
+                                End If
+
+                                sheetExportTo.Cells(.RowNumToBeWritten, .ColNumToBeWritten + 1).Value = ValueCell.Value
                                 .RowNumToBeWritten += 1
                             End With
-                            rgNextPoint = .FindNext(rgNextPoint)
-                        Loop While rgNextPoint IsNot Nothing And String.Compare(rgNextPoint.Address, firstAddress) <> 0
+                            SearchedPoint = .FindNext(SearchedPoint)
+                        Loop While SearchedPoint IsNot Nothing And String.Compare(SearchedPoint.Address, firstAddress) <> 0
 
                     End If
                 End With

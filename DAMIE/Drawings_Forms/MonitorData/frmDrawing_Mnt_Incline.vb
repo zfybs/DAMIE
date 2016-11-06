@@ -167,19 +167,19 @@ Public Class frmDrawing_Mnt_Incline
         '执行具体的绘图操作
         If F_blnMax_Depth Then
             Try
-                Call Generate_Max_Depth(sheetMonitorData:=Me.F_shtMonitorData, _
+                Call Generate_Max_Depth(sheetMonitorData:=Me.F_shtMonitorData,
                               NewExcelApp:=blnNewExcelApp)
             Catch ex As Exception
-                MessageBox.Show("绘制最大值走势图失败！" & vbCrLf & ex.Message & vbCrLf & "报错位置：" & ex.TargetSite.Name, "Error", MessageBoxButtons.OK)
+                MessageBox.Show("绘制最大值走势图失败！" & vbCrLf & ex.Message & vbCrLf & "报错位置：" & ex.StackTrace, "Error", MessageBoxButtons.OK)
             End Try
         Else
             Try
-                Call Generate_DynamicDrawing(sheetMonitorData:=Me.F_shtMonitorData, _
-                              Components:=Me.F_Components, _
-                              ProcessRegionData:=Me.F_ProcessRegionData, _
+                Call Generate_DynamicDrawing(sheetMonitorData:=Me.F_shtMonitorData,
+                              Components:=Me.F_Components,
+                              ProcessRegionData:=Me.F_ProcessRegionData,
                               NewExcelApp:=blnNewExcelApp)
             Catch ex As Exception
-                MessageBox.Show("绘制监测曲线图失败！" & vbCrLf & ex.Message & vbCrLf & "报错位置：" & ex.TargetSite.Name, "Error", MessageBoxButtons.OK)
+                MessageBox.Show("绘制监测曲线图失败！" & vbCrLf & ex.Message & vbCrLf & "报错位置：" & ex.StackTrace, "Error", MessageBoxButtons.OK)
             End Try
         End If
     End Sub
@@ -206,9 +206,9 @@ Public Class frmDrawing_Mnt_Incline
     ''' <param name="ProcessRegionData">与此监测数据所对应的基坑的施工进度</param>
     ''' <param name="NewExcelApp">用来判断是否要创建新的Excel，以及是否要对新画布所在的Excel进行美化。</param>
     ''' <remarks></remarks>
-    Private Sub Generate_DynamicDrawing(ByVal sheetMonitorData As Worksheet, _
-                  ByVal Components As Component(), _
-                  ByVal ProcessRegionData As clsData_ProcessRegionData, _
+    Private Sub Generate_DynamicDrawing(ByVal sheetMonitorData As Worksheet,
+                  ByVal Components As Component(),
+                  ByVal ProcessRegionData As clsData_ProcessRegionData,
                   ByVal NewExcelApp As Boolean)
 
         Dim myExcelForMonitorDrawing As Cls_ExcelForMonitorDrawing = Nothing
@@ -223,27 +223,27 @@ Public Class frmDrawing_Mnt_Incline
         '设置监测曲线的时间跨度
         Dim DtSp As DateSpan = GetDateSpan(Me.F_dicDate_ColNum)
 
-        '--------------标高箭头-------------------- 在监测曲线图中绘制标高箭头
-        If Components IsNot Nothing Then
-            Call ComponentsAndElevatins(Components)
-        End If
-
 
 
         '------------------------------------ 将执行结果传递给mainform的属性中
         '设置图表的Tag属性
         Dim Tags As MonitorInfo = GetChartTags(Me.F_shtMonitorData)
-        Dim moniSheet As New ClsDrawing_Mnt_Incline(F_shtMonitorData, F_myChart, _
-                                                    myExcelForMonitorDrawing, DtSp, _
-                                                    DrawingType.Monitor_Incline_Dynamic, True, F_textbox_Info, Tags, Me.F_MonitorType, _
-                                                    F_dicDate_ColNum, F_Data_UsedRange, _
+        Dim moniSheet As New ClsDrawing_Mnt_Incline(F_shtMonitorData, F_myChart,
+                                                    myExcelForMonitorDrawing, DtSp,
+                                                    DrawingType.Monitor_Incline_Dynamic, True, F_textbox_Info, Tags, Me.F_MonitorType,
+                                                    F_dicDate_ColNum, F_Data_UsedRange,
                                                     F_TheFirstseriesTag, ProcessRegionData)
+
+        '--------------标高箭头-------------------- 在监测曲线图中绘制标高箭头
+        If Components IsNot Nothing Then
+            Call ComponentsAndElevatins(moniSheet.InclineTopElevaion, Components)
+        End If
 
         ' ------------------------------------------------------------------------------------------------
         ' ----------动态开挖深度的直线与文本框-------- 根据选择确定是否要绘制动态开挖深度的直线与文本框
         If ProcessRegionData IsNot Nothing Then
             '将表示挖深的直线与文本框赋值给moniSheet的ExcavationDepth属性，以供后面在滚动时进行移动
-            Call RollingDepth_lineAndtextbox(ProcessRegionData, Date_theFirstCurve, moniSheet.ShowLabelsWhileRolling)
+            Call RollingDepth_lineAndtextbox(ProcessRegionData, Date_theFirstCurve, moniSheet.ShowLabelsWhileRolling, moniSheet.InclineTopElevaion)
         End If
 
         '扩展mainForm.TimeSpan的区间
@@ -276,9 +276,9 @@ Public Class frmDrawing_Mnt_Incline
         ' ------------------------------------------------------------------------------------------------
         '设置图表的Tag属性
         Dim Tags As MonitorInfo = GetChartTags(Me.F_shtMonitorData)
-        Dim Drawing_MMD As New ClsDrawing_Mnt_MaxMinDepth(Me.F_shtMonitorData, cht, myExcelForMonitorDrawing, _
-                                                DrawingType.Monitor_Incline_MaxMinDepth, _
-                                                False, Me.F_textbox_Info, Tags, Me.F_MonitorType, _
+        Dim Drawing_MMD As New ClsDrawing_Mnt_MaxMinDepth(Me.F_shtMonitorData, cht, myExcelForMonitorDrawing,
+                                                DrawingType.Monitor_Incline_MaxMinDepth,
+                                                False, Me.F_textbox_Info, Tags, Me.F_MonitorType,
                                                 DMMD.ConstructionDate, DMMD)
         If Me.F_WorkingStage IsNot Nothing Then
             Call DrawWorkingStage(cht, Me.F_WorkingStage)
@@ -310,7 +310,7 @@ Public Class frmDrawing_Mnt_Incline
             Dim iRowNum As Integer = Mnt_Incline.RowNum_FirstData_WithoutDate
             '表示测点深度的ID列
             '最末尾一行取用rowsCount是基于工作表的第一行有数据的情况。
-            Dim rgDepth As Range = .Range(.Cells(Mnt_Incline.RowNum_FirstData_WithoutDate, Mnt_Incline.ColNum_Depth), _
+            Dim rgDepth As Range = .Range(.Cells(Mnt_Incline.RowNum_FirstData_WithoutDate, Mnt_Incline.ColNum_Depth),
                                        .Cells(rowsCount, Mnt_Incline.ColNum_Depth))
             Dim vDepth As Object(,) = rgDepth.Value
             'ReDim F_arrDepth(0 To rowsCount - Mnt_Incline.RowNum_FirstData_WithoutDate)
@@ -324,12 +324,12 @@ Public Class frmDrawing_Mnt_Incline
                         'Me.F_arrDepth(iRowNum - Mnt_Incline.RowNum_FirstData_WithoutDate) = Depth
                         iRowNum += 1
                     Catch ex As Exception
-                        MessageBox.Show("第" & Mnt_Incline.ColNum_Depth & "列的深度数据无法转换为数值，请检查第" & iRowNum.ToString & "行。", _
+                        MessageBox.Show("第" & Mnt_Incline.ColNum_Depth & "列的深度数据无法转换为数值，请检查第" & iRowNum.ToString & "行。",
                                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                         Exit For
                     End Try
                 Else
-                    MessageBox.Show("第" & Mnt_Incline.ColNum_Depth & "列的深度数据为空，请检查第" & iRowNum.ToString & "行。", _
+                    MessageBox.Show("第" & Mnt_Incline.ColNum_Depth & "列的深度数据为空，请检查第" & iRowNum.ToString & "行。",
                                       "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     Exit For
                 End If
@@ -339,7 +339,7 @@ Public Class frmDrawing_Mnt_Incline
             Dim iColNum As Integer = Mnt_Incline.ColNum_FirstData_Displacement
             '表示施工日期的表头行
             '最末尾一列取用colsCount是基于工作表的第一列有数据的情况。
-            Dim rgDate As Range = .Range(.Cells(Mnt_Incline.RowNumForDate, Mnt_Incline.ColNum_FirstData_Displacement), _
+            Dim rgDate As Range = .Range(.Cells(Mnt_Incline.RowNumForDate, Mnt_Incline.ColNum_FirstData_Displacement),
                                        .Cells(Mnt_Incline.RowNumForDate, colsCount))
             Dim vDate As Object(,) = rgDate.Value
             For Each v As Object In vDate
@@ -352,19 +352,19 @@ Public Class frmDrawing_Mnt_Incline
                         '如果成功转换，说明此深度数据有效，否则，说明到了最后一行的深度值
                         iColNum += 1
                     Catch ex As Exception
-                        MessageBox.Show("第" & Mnt_Incline.RowNumForDate & "行的日期字段的格式不正确，请检查第" & ConvertColumnNumberToString(iColNum) & "列。", _
+                        MessageBox.Show("第" & Mnt_Incline.RowNumForDate & "行的日期字段的格式不正确，请检查第" & ConvertColumnNumberToString(iColNum) & "列。",
                                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                         Exit For
                     End Try
                 Else
-                    MessageBox.Show("第" & Mnt_Incline.RowNumForDate & "行的日期数据为空，请检查第" & ConvertColumnNumberToString(iColNum) & "列。", _
+                    MessageBox.Show("第" & Mnt_Incline.RowNumForDate & "行的日期数据为空，请检查第" & ConvertColumnNumberToString(iColNum) & "列。",
                                       "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     Exit For
                 End If
             Next
             endCol = iColNum - 1
             ' 
-            UsedRange_shtData = .Range(.Cells(Mnt_Incline.RowNum_FirstData_WithoutDate, _
+            UsedRange_shtData = .Range(.Cells(Mnt_Incline.RowNum_FirstData_WithoutDate,
                                               Mnt_Incline.ColNum_Depth), .Cells(endRow, endCol))
             'Data_UsedRange包括第一列，但是不包括第一行的日期。
             F_Data_UsedRange = UsedRange_shtData
@@ -400,7 +400,7 @@ Public Class frmDrawing_Mnt_Incline
         '测斜数据区的数组，即不包含dataRange中的第1列以外的区域的大数组。
         Dim arrDataDisplacement As Object
         With F_shtMonitorData
-            arrDataDisplacement = .Range(.Cells(Mnt_Incline.RowNum_FirstData_WithoutDate, Mnt_Incline.ColNum_FirstData_Displacement), _
+            arrDataDisplacement = .Range(.Cells(Mnt_Incline.RowNum_FirstData_WithoutDate, Mnt_Incline.ColNum_FirstData_Displacement),
                                 .Cells(dataUsedRange.Rows.Count, dataUsedRange.Columns.Count)) '.Value
         End With
 
@@ -445,24 +445,26 @@ Public Class frmDrawing_Mnt_Incline
     ''' </summary>
     '''  <param name="ProcessRegion">此基坑区域所在的列的Range对象(包括前面几行的表头数据)</param>
     '''  <param name="ShowLabelsWhileRolling">指示是否要在进行滚动时指示开挖标高的标识线旁给出文字说明，比如“开挖标高”等。</param>
+    '''  <param name="inclineTopElev"> 测斜管顶部的标高值 </param>
     ''' <remarks>此挖深直线与文本框用来进行后期滚动时显示每一天的开挖情况之用的。</remarks>
-    Private Sub RollingDepth_lineAndtextbox(ByVal ProcessRegion As clsData_ProcessRegionData, _
-                                               ByVal Date_theFirstCurve As Date, ByVal ShowLabelsWhileRolling As Boolean)
+    Private Sub RollingDepth_lineAndtextbox(ByVal ProcessRegion As clsData_ProcessRegionData,
+                                               ByVal Date_theFirstCurve As Date, ByVal ShowLabelsWhileRolling As Boolean, inclineTopElev As Single)
         ' ---------------- 绘制表示挖深的直线与文本框
         ''对第一条监测曲线的施工日期进行初始同仁，用来绘制第一条监测曲线
         'Me.F_Date_theFirstCurve = F_dicDate_ColNum.Keys(0)
-        Dim topDepth As Single
+        Dim excavElev As Single
         Try
-            topDepth = ProcessRegion.Date_Elevation.Item(Date_theFirstCurve)
+            excavElev = ProcessRegion.Date_Elevation.Item(Date_theFirstCurve)
         Catch ex As KeyNotFoundException
             Dim ClosestDate As Date = ClsData_DataBase.FindTheClosestDateInSortedList(ProcessRegion.Date_Elevation.Keys, Date_theFirstCurve)
-            topDepth = ProcessRegion.Date_Elevation.Item(ClosestDate)
+            excavElev = ProcessRegion.Date_Elevation.Item(ClosestDate)
         End Try
         '
         '根据每一个标高值，画出相应的深度线及文本框
         ' ---------------------- 绘制直线 与 设置直线格式 ----------------------------------------------------
+
         '直线的基本几何参数
-        Dim linetop As Single = GetLineTopbyDepth(F_myChart, topDepth)
+        Dim linetop = ExcelFunction.GetPositionInChartByValue(F_myChart.Axes(XlAxisType.xlValue), inclineTopElev - excavElev)
         '
         Dim lineLeft As Single
         Dim lineWidth As Single
@@ -473,9 +475,9 @@ Public Class frmDrawing_Mnt_Incline
         End With
         '
         '绘制直线与文本框
-        Dim Line As Shape = F_myChart.Shapes.AddLine(BeginX:=lineLeft, _
-                                       BeginY:=linetop, _
-                                       EndX:=lineLeft + lineWidth, _
+        Dim Line As Shape = F_myChart.Shapes.AddLine(BeginX:=lineLeft,
+                                       BeginY:=linetop,
+                                       EndX:=lineLeft + lineWidth,
                                        EndY:=linetop)
         ' -- 设置直线格式 --
         With Line.Line
@@ -489,10 +491,10 @@ Public Class frmDrawing_Mnt_Incline
         Dim Textbox As Shape = Nothing
         If ShowLabelsWhileRolling Then
 
-            Textbox = F_myChart.Shapes.AddTextbox(Orientation:=Office.MsoTextOrientation.msoTextOrientationHorizontal, _
-                                                Left:=plotA.InsideLeft, _
-                                                Top:=linetop - 10, _
-                                                Width:=lineLeft - plotA.InsideLeft + 100, _
+            Textbox = F_myChart.Shapes.AddTextbox(Orientation:=Office.MsoTextOrientation.msoTextOrientationHorizontal,
+                                                Left:=plotA.InsideLeft,
+                                                Top:=linetop - 10,
+                                                Width:=lineLeft - plotA.InsideLeft + 100,
                                                 Height:=20)
 
             Textbox.TextFrame2.AutoSize = Microsoft.Office.Core.MsoAutoSize.msoAutoSizeShapeToFitText
@@ -519,10 +521,11 @@ Public Class frmDrawing_Mnt_Incline
     ''' <summary>
     ''' 标注每个构件的标高
     ''' </summary>
+    ''' <param name="inclineTopElevation"> 测斜管顶端的绝对标高值 </param>
     ''' <param name="ComponentsOfExcationID">记录基坑ID中对应的每一个构件项目与其对应标高的数组,
     ''' 数组中的第一列表示构件项目的名称，第二列表示构件项目的标高值</param>
-    ''' <remarks></remarks>
-    Private Sub ComponentsAndElevatins(ByVal ComponentsOfExcationID As Component()) ', ByVal ExcavID As String, ByVal IDtoElevationAndData As Dictionary(Of String, ClsData_DataBase.clsExcavationID)
+    ''' ''' <remarks></remarks>
+    Private Sub ComponentsAndElevatins(inclineTopElevation As Single, ByVal ComponentsOfExcationID As Component()) ', ByVal ExcavID As String, ByVal IDtoElevationAndData As Dictionary(Of String, ClsData_DataBase.clsExcavationID)
         'ComponentsOfExcationID
         'Dim arrexcavation(,) As String = IDtoElevationAndData.Item(ExcavID).Components
         '定义标高线的长度范围
@@ -536,7 +539,7 @@ Public Class frmDrawing_Mnt_Incline
             Dim Component As Component = ComponentsOfExcationID(i)
             Dim Elevation As Single = Component.Elevation
             '基准标高，即将标高数据换算为相对于地面标高的深度数据
-            Dim relativedepth As Single = Project_Expo.Elevation_GroundSurface - Elevation
+            Dim relativedepth As Single = inclineTopElevation - Elevation
             If relativedepth >= 0 Then
                 If Component.Type = ComponentType.Strut OrElse Component.Type = ComponentType.TopOfBottomSlab Then
                     '------------------------------------ 绘制对应标高项的标高线与文本框
@@ -544,9 +547,11 @@ Public Class frmDrawing_Mnt_Incline
                     Dim Textbox As Shape = Nothing
                     '-------------------------------
                     ' 根据每一个标高值，画出相应的深度线及文本框
-                    Call DrawDepthLineAndTextBox(F_myChart, Elevation, Line, True, Textbox)
+
+                    Call DrawDepthLineAndTextBox(myChart:=F_myChart, relativeDepth:=relativedepth, Line:=Line, ShowLabelsWhileRolling:=True, Textbox:=Textbox)
+
                     '文本框中的文本
-                    Textbox.TextFrame2.TextRange.Text = Component.Description & " (" & relativedepth.ToString & ")"
+                    Textbox.TextFrame2.TextRange.Text = Component.Description & " (" & Elevation.ToString & ")"
                     '-------------------------------
                     lst_Name_LinesAndTextBox.Add(Line.Name)
                     lst_Name_LinesAndTextBox.Add(Textbox.Name)
@@ -567,21 +572,24 @@ Public Class frmDrawing_Mnt_Incline
     ''' 根据每一个构件的标高值，画出相应的深度线及文本框
     ''' </summary>
     ''' <param name="myChart">进行绘图的图表对象</param>
-    ''' <param name="depth">开挖标高值，以绝对标高值表示，而不是相对于地面的深度值</param>
+    ''' <param name="relativeDepth"> 构件相对于测斜管顶部的深度值</param>
     '''  <param name="ShowLabelsWhileRolling">指示是否要在进行滚动时指示开挖标高的标识线旁给出文字说明，比如“开挖标高”等。</param>
     '''  <param name="Line">要返回的Line对象</param>
     '''  <param name="Textbox">要返回的文本框Textbox对象，如果ShowLabelsWhileRolline的值为False，则其返回Nothing</param>
     ''' <remarks></remarks>
-    Private Sub DrawDepthLineAndTextBox(ByVal myChart As Chart, ByVal depth As Single, ByRef Line As Shape, _
-                                             Optional ByVal ShowLabelsWhileRolling As Boolean = True, _
+    Private Sub DrawDepthLineAndTextBox(ByVal myChart As Chart, ByVal relativeDepth As Single, ByRef Line As Shape,
+                                             Optional ByVal ShowLabelsWhileRolling As Boolean = True,
                                              Optional ByRef Textbox As Shape = Nothing)
         '直线与文本框的基本几何参数
-        Dim linetop As Single = GetLineTopbyDepth(myChart, depth)
+
+        '
+        Dim linetop = ExcelFunction.GetPositionInChartByValue(myChart.Axes(XlAxisType.xlValue), relativeDepth)
+
         '---------------------------- 绘制直线 设置直线格式 ----------------------------------
         With myChart.ChartArea
-            Line = myChart.Shapes.AddLine(BeginX:=.Left + .Width, _
-                                           BeginY:=linetop, _
-                                           EndX:=.Left + .Width - 50, _
+            Line = myChart.Shapes.AddLine(BeginX:= .Left + .Width,
+                                           BeginY:=linetop,
+                                           EndX:= .Left + .Width - 50,
                                            EndY:=linetop)  'EndX中的 -50 即为水平直线的长度
 
             ' -- 设置直线格式 --
@@ -596,10 +604,10 @@ Public Class frmDrawing_Mnt_Incline
         '--------------------------- 绘制文本框 设置文本框格式----------------------------
         If ShowLabelsWhileRolling Then
             With myChart.ChartArea
-                Textbox = myChart.Shapes.AddTextbox(Orientation:=Office.MsoTextOrientation.msoTextOrientationHorizontal, _
-                                                     Left:=.Left + .Width - 100, _
-                                                     Top:=linetop - 8, _
-                                                     Width:=100, _
+                Textbox = myChart.Shapes.AddTextbox(Orientation:=Office.MsoTextOrientation.msoTextOrientationHorizontal,
+                                                     Left:= .Left + .Width - 100,
+                                                     Top:=linetop - 15,
+                                                     Width:=100,
                                                      Height:=20)    '文本框的宽度为100像素
             End With
             ' ------ 设置文本框格式
@@ -619,30 +627,6 @@ Public Class frmDrawing_Mnt_Incline
             End With
         End If
     End Sub
-
-    ''' <summary>
-    ''' 将相对深度值转换与图表坐标系中的深度坐标值
-    ''' </summary>
-    ''' <param name="myChart">进行绘图的图表对象</param>
-    ''' <param name="depth">构件的相对于现状地面的深度值，单位为m</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Private Function GetLineTopbyDepth(ByVal myChart As Chart, ByVal depth As Single) As Single
-
-        '基准标高，即将标高数据换算为相对于地面标高的深度数据
-        Dim relativedepth As Single = Project_Expo.Elevation_GroundSurface - depth
-        '
-        Dim axisY As Axis = myChart.Axes(XlAxisType.xlValue)
-        '直线与文本框的基本几何参数
-        Dim lineTop As Single
-        '
-        Dim plotA As PlotArea = myChart.PlotArea
-        With plotA
-            '将相对深度值转换与图表坐标系中的深度坐标值！！！！！
-            lineTop = .InsideTop + .InsideHeight * (relativedepth - axisY.MinimumScale) / (axisY.MaximumScale - axisY.MinimumScale)
-        End With
-        Return lineTop
-    End Function
 
 #End Region
 
@@ -702,7 +686,7 @@ Public Class frmDrawing_Mnt_Incline
             MessageBox.Show("提取监测数据工作表中的位移最值及其对应的深度值出错。" &
                             vbCrLf & "出错的日期为：" & Day_Data.ToShortDateString &
                             vbCrLf & ex.Message &
-                            vbCrLf & "报错位置：" & ex.TargetSite.Name, _
+                            vbCrLf & "报错位置：" & ex.TargetSite.Name,
                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return Nothing
         End Try
@@ -819,7 +803,7 @@ Public Class frmDrawing_Mnt_Incline
             'Dim imin2 = F_ExcelAppDrawing.WorksheetFunction.Min(arrMin)
             '.MinimumScale = F_ExcelAppDrawing.WorksheetFunction.Floor_Precise(Math.Min(imin1, imin2), .MajorUnit)
 
-            .AxisTitle.Text = GetAxisLabel(DrawingType.Monitor_Incline_MaxMinDepth, Me.F_MonitorType, _
+            .AxisTitle.Text = GetAxisLabel(DrawingType.Monitor_Incline_MaxMinDepth, Me.F_MonitorType,
                                            XlAxisType.xlValue, XlAxisGroup.xlPrimary)
         End With
 
@@ -839,7 +823,7 @@ Public Class frmDrawing_Mnt_Incline
             'Dim imin2 = F_ExcelAppDrawing.WorksheetFunction.Min(arrMin)
             '.MinimumScale = F_ExcelAppDrawing.WorksheetFunction.Floor_Precise(Math.Min(imin1, imin2), .MajorUnit)
             .ReversePlotOrder = True
-            .AxisTitle.Text = GetAxisLabel(DrawingType.Monitor_Incline_MaxMinDepth, Me.F_MonitorType, _
+            .AxisTitle.Text = GetAxisLabel(DrawingType.Monitor_Incline_MaxMinDepth, Me.F_MonitorType,
                                            XlAxisType.xlValue, XlAxisGroup.xlSecondary)
         End With
 
@@ -867,7 +851,7 @@ Public Class frmDrawing_Mnt_Incline
                     Depth = Project_Expo.Elevation_GroundSurface - WS.Elevation
                     Dim EndY As Single = ExcelFunction.GetPositionInChartByValue(Cht.Axes(XlAxisType.xlValue, XlAxisGroup.xlSecondary), Depth)
                     '
-                    Dim shpLine As Shape = .Shapes.AddLine(BeginX:=0, BeginY:=Cht.PlotArea.InsideTop, _
+                    Dim shpLine As Shape = .Shapes.AddLine(BeginX:=0, BeginY:=Cht.PlotArea.InsideTop,
                                                            EndX:=0, EndY:=EndY)
 
                     With shpLine.Line
@@ -884,10 +868,10 @@ Public Class frmDrawing_Mnt_Incline
                     Dim TextWidth As Single = 25 : Dim textHeight As Single = 10
                     Dim shpText As Shape
                     With shpLine
-                        shpText = Cht.Shapes.AddTextbox(Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal, _
-                                                                     Left:=.Left - TextWidth / 2, Top:=.Top - textHeight, Height:=textHeight, Width:=TextWidth)
+                        shpText = Cht.Shapes.AddTextbox(Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal,
+                                                                     Left:= .Left - TextWidth / 2, Top:= .Top - textHeight, Height:=textHeight, Width:=TextWidth)
                     End With
-                    Call ExcelFunction.FormatTextbox_Tag(shpText.TextFrame2, Text:=WS.Description, _
+                    Call ExcelFunction.FormatTextbox_Tag(shpText.TextFrame2, Text:=WS.Description,
                                                          HorizontalAlignment:=Microsoft.Office.Core.MsoParagraphAlignment.msoAlignCenter)
                     ' -------------------------------------------------------------------------------------------
                     arrLineName(i) = shpLine.Name
@@ -904,7 +888,7 @@ Public Class frmDrawing_Mnt_Incline
                     End Try
                 End With
             Catch ex As Exception
-                MessageBox.Show("设置开挖工况位置出现异常。" & vbCrLf & ex.Message & vbCrLf & "报错位置：" & ex.TargetSite.Name, _
+                MessageBox.Show("设置开挖工况位置出现异常。" & vbCrLf & ex.Message & vbCrLf & "报错位置：" & ex.TargetSite.Name,
        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End Try
         End With
@@ -922,11 +906,11 @@ Public Class frmDrawing_Mnt_Incline
     ''' <param name="NewExcelApp"></param>
     ''' <param name="ExcelForMntDrawing"></param>
     ''' <remarks></remarks>
-    Private Sub PrePare(ByVal sheetMonitorData As Worksheet, ByVal NewExcelApp As Boolean, _
+    Private Sub PrePare(ByVal sheetMonitorData As Worksheet, ByVal NewExcelApp As Boolean,
                         ByRef ExcelForMntDrawing As Cls_ExcelForMonitorDrawing)
         '   --------------- 获取用来绘图的Excel程序，并将此界面加入主程序的监测曲线集合 -------------------
-        F_ExcelAppDrawing = GetApplication(NewExcelApp:=NewExcelApp, _
-                                         ExcelForMntDrawing:=ExcelForMntDrawing, _
+        F_ExcelAppDrawing = GetApplication(NewExcelApp:=NewExcelApp,
+                                         ExcelForMntDrawing:=ExcelForMntDrawing,
                                          MntDrawingExcelApps:=F_GlobalApp.MntDrawing_ExcelApps)
         '   ----------------------------------
         F_ExcelAppDrawing.ScreenUpdating = False
@@ -982,8 +966,8 @@ Public Class frmDrawing_Mnt_Incline
     ''' <param name="NewExcelApp">按情况看是否要打开新的Application</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Private Function GetApplication(ByVal NewExcelApp As Boolean, _
-                                    ByVal MntDrawingExcelApps As Dictionary_AutoKey(Of Cls_ExcelForMonitorDrawing), _
+    Private Function GetApplication(ByVal NewExcelApp As Boolean,
+                                    ByVal MntDrawingExcelApps As Dictionary_AutoKey(Of Cls_ExcelForMonitorDrawing),
                                     ByRef ExcelForMntDrawing As Cls_ExcelForMonitorDrawing) As Application
         Dim app As Application
         If NewExcelApp Then                '打开新的Excel程序
@@ -1018,7 +1002,7 @@ Public Class frmDrawing_Mnt_Incline
     ''' <param name="TemplatePath">用户自定义的Chart模板文件的路径</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Private Function DrawChart(ByVal DrawingSheet As Worksheet, ByVal UserDefinedTemplate As Boolean, _
+    Private Function DrawChart(ByVal DrawingSheet As Worksheet, ByVal UserDefinedTemplate As Boolean,
                                Optional ByVal ChartType As XlChartType = XlChartType.xlXYScatterLines, Optional ByVal TemplatePath As String = Nothing) As Chart
         Dim cht As Chart
         DrawingSheet.Activate()
@@ -1154,7 +1138,7 @@ Public Class frmDrawing_Mnt_Incline
                 If fileHasOpened Then
                     MessageBox.Show("选择的工作簿已经打开", "Tip", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    Me.F_wkbkData = GlobalApplication.Application.ExcelApplication_DB.Workbooks.Open( _
+                    Me.F_wkbkData = GlobalApplication.Application.ExcelApplication_DB.Workbooks.Open(
                         Filename:=FilePath, UpdateLinks:=False, ReadOnly:=True)
                     With Me.ComboBoxOpenedWorkbook
                         Dim lstItem As LstbxDisplayAndItem = New LstbxDisplayAndItem(Me.F_wkbkData.Name, Me.F_wkbkData)
@@ -1167,6 +1151,14 @@ Public Class frmDrawing_Mnt_Incline
                 Debug.Print("打开新的数据工作簿出错！")
                 Exit Sub
             End Try
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            ComboBox1.Enabled = True
+        Else
+            ComboBox1.Enabled = False
         End If
     End Sub
 
@@ -1371,4 +1363,3 @@ Public Class frmDrawing_Mnt_Incline
 #End Region
 
 End Class
-
